@@ -1,6 +1,7 @@
 <?php
 
 header('Content-Type: text/html; charset=UTF-8');
+
 $mysqli=mysqli_connect("localhost","team21","team21","team21");
 if(mysqli_connect_errno()){
    printf("Connect failed: %s\n", mysqli_error($mysqli));
