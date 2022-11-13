@@ -1,0 +1,10 @@
+INSERT INTO outlet VALUES('OUT049', 1999, 'Medium', 'Tier 1', 'Supermarket Type1', 23);
+INSERT INTO outlet VALUES('OUT018', 2009, 'Medium', 'Tier 3', 'Supermarket Type2', 13);
+INSERT INTO outlet VALUES('OUT010', 1998, 'Medium', 'Tier 3', 'Grocery Store', 24);
+INSERT INTO outlet VALUES('OUT013', 1987, 'High', 'Tier 3', 'Supermarket Type1', 35);
+INSERT INTO outlet VALUES('OUT027', 1985, 'Medium', 'Tier 3', 'Supermarket Type3', 37);
+INSERT INTO outlet VALUES('OUT045', 2002, 'Medium', 'Tier 2', 'Supermarket Type1', 20);
+INSERT INTO outlet VALUES('OUT017', 2007, 'Medium', 'Tier 2', 'Supermarket Type1', 15);
+INSERT INTO outlet VALUES('OUT046', 1997, 'Small', 'Tier 1', 'Supermarket Type1', 25);
+INSERT INTO outlet VALUES('OUT035', 2004, 'Small', 'Tier 2', 'Supermarket Type1', 18);
+INSERT INTO outlet VALUES('OUT019', 1985, 'Small', 'Tier 1', 'Grocery Store', 37);
