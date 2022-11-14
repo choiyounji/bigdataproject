@@ -21,7 +21,7 @@
 <div class="radios">
     <form action="" method="POST">
         <p><div class="show"> SHOW item types: </div></br>   
-        <label><input type= "checkbox" name = "showValues" vlaue="ALL" checked> ALL</label></br>
+        <label><input type= "checkbox" name = "showValues" vlaue="All" checked> ALL</label></br>
         <label><input type= "checkbox" name = "showValues" vlaue="Baking Goods">Baking Goods</label></br>
         <label><input type= "checkbox" name = "showValues" vlaue="Breads">Breads</label></br>
         <label><input type= "checkbox" name = "showValues" vlaue="Breakfast">Breakfast</label></br>
