@@ -16,6 +16,10 @@
     <th>averageSales</th>
 
 <?php
+<<<<<<< Updated upstream
+=======
+$value = $_POST['showValues'];
+>>>>>>> Stashed changes
 
 header('Content-Type: text/html; charset=UTF-8');
 $mysqli=mysqli_connect("localhost","team21","team21","team21");
@@ -48,6 +52,7 @@ else{
 </table>
 
 <div class="radios">
+<<<<<<< Updated upstream
     <form action="" method="POST">
         <p><div class="show"> SHOW: </div></br>
         
@@ -58,6 +63,20 @@ else{
         <input type="submit" name="submit" value="Run Analysis">
 </div>
 
+=======
+    <form action="fat.php" method="POST">
+        <p><div class="show"> SHOW: </div></br>
+        
+        <label><input type= "radio" name = "showValues" value="All" <? if($value ==null||$value ==="All"){echo "checked";}?>> All</label></br>
+        <label><input type= "radio" name = "showValues" value="High Fat" <? if($value==="High Fat"){echo "checked";}?>>High Fat<label></br>
+        <label><input type= "radio" name = "showValues" value="Regular" <? if($value==="Regular"){echo "checked";}?>>Regular<label></br>
+        <label><input type= "radio" name = "showValues" value="Low Fat" <? if($value==="Low Fat"){echo "checked";}?>>Low Fat<label><p>
+        <input type="submit" name="submit" value="Run Analysis">
+</div>
+
+
+
+>>>>>>> Stashed changes
 </body>
 
 </html>
