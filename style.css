@@ -83,6 +83,16 @@ right:0;
 
 margin: auto;
 }
+label{
+     display:inline-block;
+ font-size: 30px;
+ color:#FF8F3D;
+      width:250px;
+       line-height:50px; }
+
+       input[type="checkbox"]{
+        margin:10px;
+       }
 
 
 
