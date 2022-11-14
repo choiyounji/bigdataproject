@@ -20,19 +20,25 @@
                     exit();
                 }
                 else{
-                    $showValues = $_POST["showValues"]? "": "('Low Fat', 'Regular', 'High Fat')";
-                    if($_POST["showValues"] == "High Fat"){
-                        $showValues = "('High Fat')";
-                    }
-                    elseif($_POST["showValues"] == "Low Fat"){
-                        $showValues = "('Low Fat')";
-                    }
-                    elseif($_POST["showValues"] == "Regular"){
-                        $showValues = "('Regular')";
+                    $showValues = "";
+                    if($_POST["showValues"]){
+                        if($_POST["showValues"] == "High Fat"){
+                            $showValues = "('High Fat')";
+                        }
+                        elseif($_POST["showValues"] == "Low Fat"){
+                            $showValues = "('Low Fat')";
+                        }
+                        elseif($_POST["showValues"] == "Regular"){
+                            $showValues = "('Regular')";
+                        }
+                        else{
+                            $showValues = "('Low Fat', 'Regular', 'High Fat')";
+                        }
                     }
                     else{
                         $showValues = "('Low Fat', 'Regular', 'High Fat')";
                     }
+
 
  
 
