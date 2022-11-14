@@ -38,10 +38,6 @@
                     else{
                         $showValues = "('Low Fat', 'Regular', 'High Fat')";
                     }
-
-
- 
-
                     $sql = "SELECT iFatContent, COUNT(iFatContent) AS cnt, SUM(iOutletSales) AS totalSales, AVG(iOutletSales) AS averageSales
                     FROM fatSales
                     WHERE iFatContent in ".$showValues."
@@ -75,10 +71,10 @@
         <div class="radios">
             <form action="fat.php" method="POST">
                 <p><div class="show"> SHOW: </div></br>
-                <label><input type= "radio" name = "showValues" value="All" <? if($value ==null||$value ==="All"){echo "checked";}?> All</label></br>
-                <label><input type= "radio" name = "showValues" value="High Fat" <? if($value==="High Fat"){echo "checked";}?>High Fat</label></br>
-                <label><input type= "radio" name = "showValues" value="Regular" <? if($value==="Regular"){echo "checked";}?>Regular</label></br>
-                <label><input type= "radio" name = "showValues" value="Low Fat" <? if($value==="Low Fat"){echo "checked";}?>Low Fat</label><p>
+                <label><input type= "radio" name = "showValues" value="All" <?php if($value ==null||$value ==="All"){echo "checked";}?>/> All</label></br>
+                <label><input type= "radio" name = "showValues" value="High Fat" <?php if($value==="High Fat"){echo "checked";}?>/>High Fat</label></br>
+                <label><input type= "radio" name = "showValues" value="Regular" <?php if($value==="Regular"){echo "checked";}?>/>Regular</label></br>
+                <label><input type= "radio" name = "showValues" value="Low Fat" <?php if($value==="Low Fat"){echo "checked";}?>/>Low Fat</label><p>
                 <input type="submit" name="submit" value="Run Analysis">
         </div>
     </body>
