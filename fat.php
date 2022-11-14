@@ -29,6 +29,9 @@
                         elseif($_POST["showValues"] == "Regular"){
                             $showValues = "('Regular')";
                         }
+                        else{
+                        $showValues = "('Low Fat', 'Regular', 'High Fat')";
+                        }
                     }
                     else{
                         $showValues = "('Low Fat', 'Regular', 'High Fat')";
