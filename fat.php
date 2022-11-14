@@ -14,6 +14,8 @@
     <th>averageSales</th>
 
 <?php
+$value = $_POST['showValues'];
+
 
 header('Content-Type: text/html; charset=UTF-8');
 $mysqli=mysqli_connect("localhost","team21","team21","team21");
@@ -46,16 +48,15 @@ else{
 </table>
 
 <div class="radios">
-    <form action="" method="POST">
+    <form action="fat.php" method="POST">
         <p><div class="show"> SHOW: </div></br>
         
-        <label><input type= "radio" name = "showValues" vlaue="ALL" checked> ALL</label></br>
-        <label><input type= "radio" name = "showValues" vlaue="High Fat">High Fat<label></br>
-        <label><input type= "radio" name = "showValues" vlaue="Regular">Regular<label></br>
-        <label><input type= "radio" name = "showValues" vlaue="Low Fat">Low Fat<label><p>
+        <label><input type= "radio" name = "showValues" value="All" <? if($value ==null||$value ==="All"){echo "checked";}?>> All</label></br>
+        <label><input type= "radio" name = "showValues" value="High Fat" <? if($value==="High Fat"){echo "checked";}?>>High Fat<label></br>
+        <label><input type= "radio" name = "showValues" value="Regular" <? if($value==="Regular"){echo "checked";}?>>Regular<label></br>
+        <label><input type= "radio" name = "showValues" value="Low Fat" <? if($value==="Low Fat"){echo "checked";}?>>Low Fat<label><p>
         <input type="submit" name="submit" value="Run Analysis">
 </div>
-
 </body>
 
 </html>
