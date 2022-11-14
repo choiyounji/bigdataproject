@@ -19,6 +19,9 @@
                     exit();
                 }
                 else{
+                    $value = $_POST["showValues"];
+                    $array = array($value);
+
                     $selectedTypes = array();
                     foreach($_POST["showValues"] as $type){
                         if($type != "All"){
@@ -52,30 +55,34 @@
                     }
                     mysqli_free_result($res);
                     mysqli_close($mysqli);
+
                 }
             ?>
         </table>
         <div class="radios">
             <form action="type.php" method="POST">
-                <p><div class="show"> SHOW item types: </div></br>   
-                <label><input type= "checkbox" name = "showValues" value="All" > All</label></br>
-                <label><input type= "checkbox" name = "showValues" value="Baking Goods">Baking Goods</label></br>
-                <label><input type= "checkbox" name = "showValues" value="Breads">Breads</label></br>
-                <label><input type= "checkbox" name = "showValues" value="Breakfast">Breakfast</label></br>
-                <label><input type= "checkbox" name = "showValues" value="Canned"></label>Canned</br>
-                <label><input type= "checkbox" name = "showValues" value="Dairy"></label>Dairy</br>
-                <label><input type= "checkbox" name = "showValues" value="Frozen Foods"></label>Frozen Foods</br>
-                <label><input type= "checkbox" name = "showValues" value="Fruits and Vegetables"></label>Fruits and Vegetables</br>
-                <label><input type= "checkbox" name = "showValues" value="Hard Drinks"></label>Hard Drinks</br>
-                <label><input type= "checkbox" name = "showValues" value="Health and Hygiene"></label>Health and Hygiene</br>
-                <label><input type= "checkbox" name = "showValues" value="Household"></label>Household</br>
-                <label><input type= "checkbox" name = "showValues" value="Meat"></label>Meat</br>
-                <label><input type= "checkbox" name = "showValues" value="Seafood"></label>Seafood</br>
-                <label><input type= "checkbox" name = "showValues" value="Snack Foods"></label>Snack Foods</br>
-                <label><input type= "checkbox" name = "showValues" value="Soft Drinks"></label>Soft Drinks</br>
-                <label><input type= "checkbox" name = "showValues" value="Starcky Foods"></label>Starcky Foods</br>
-                <label><input type= "checkbox" name = "showValues" value="Others"></label>Others<p>
-                <input type="submit" name="submit" value="Run Analysis">
+                <p>
+                    <div class="show"> SHOW item types: </div></br>   
+                    <label><input type= "checkbox" name = "showValues[]" value="All" <?php if(empty($value)){echo "checked";}?>> All</input></label></br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Baking Goods"<?php if(array_search('Baking Goods', $array)){echo "checked";}?>>Baking Goods</input></label></br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Breads" <?php if(array_search('Breads', $array)){echo "checked";}?>>Breads</input></label></br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Breakfast" <?php if(array_search('Breakfast', $array)){echo "checked";}?>>Breakfast</input></label></br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Canned" <?php if(array_search('Canned', $array)){echo "checked";}?>></input></label>Canned</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Dairy" <?php if(array_search('Dairy', $array)){echo "checked";}?>></input></label>Dairy</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Frozen Foods" <?php if(array_search('Frozen Foods', $array)){echo "checked";}?>></input></label>Frozen Foods</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Fruits and Vegetables" <?php if(array_search('Fruits and Vegetables', $array)){echo "checked";}?>></input></label>Fruits and Vegetables</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Hard Drinks" <?php if(array_search('Hard Drinks', $array)){echo "checked";}?>></input></label>Hard Drinks</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Health and Hygiene" <?php if(array_search('Health and Hygiene', $array)){echo "checked";}?>></input></label>Health and Hygiene</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Household" <?php if(array_search('Household', $array)){echo "checked";}?>></input></label>Household</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Meat" <?php if(array_search('Meat', $array)){echo "checked";}?>></input></label>Meat</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Seafood" <?php if(array_search('Seafood', $array)){echo "checked";}?>></input></label>Seafood</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Snack Foods" <?php if(array_search('Snack Foods', $array)){echo "checked";}?>></input></label>Snack Foods</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Soft Drinks" <?php if(array_search('Soft Drinks', $array)){echo "checked";}?>></input></label>Soft Drinks</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Starcky Foods" <?php if(array_search('Starcky Foods', $array)){echo "checked";}?>></input></label>Starcky Foods</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Others" <?php if(array_search('Others', $array)){echo "checked";}?>></input></label>Others
+                </p>
+                <input type="submit" name="submit" value="Run Analysis" />
+            </form>
         </div>
     </body>
 </html>
