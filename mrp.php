@@ -7,13 +7,11 @@
 
 
     <body>
-        <div class="title">Sales information based on Item Type </div>
+        <div class="title">MRP based on item type </div>
       
 <table>
     <th>iType</th>
-    <th>count</th>
-    <th>totalSales</th>
-    <th>averageSales</th>
+    <th>averageMrp</th>
 
 
 </table>
