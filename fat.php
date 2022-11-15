@@ -5,14 +5,13 @@
         <link rel="stylesheet" href="result.css">
     </head>
     <body>
-        <div class="title">Sales information based on fat </div>
+        <div class="title">Sales information based on Fat </div>
         <table>
-            <th>iFatContent</th>
-            <th>count(iFatContent)</th>
-            <th>totalSales</th>
-            <th>averageSales</th>
+            <th>Fat Content</th>
+            <th>Count</th>
+            <th>Total Sales</th>
+            <th>Average Sales</th>
             <?php
-                $value = $_POST['showValues'];
                 header('Content-Type: text/html; charset=UTF-8');
                 $mysqli=mysqli_connect("localhost","team21","team21","team21");
                 if(mysqli_connect_errno()){
@@ -21,7 +20,7 @@
                 }
                 else{
                     $showValues = "";
-                    if($_POST["showValues"]){
+                    if(isset($_POST["showValues"])){
                         if($_POST["showValues"] == "High Fat"){
                             $showValues = "('High Fat')";
                         }
@@ -46,7 +45,7 @@
                     if($res){
 
                         if(mysqli_num_rows($res) == 0){
-                            echo "There are no sales under the chosen conditions.";
+                            echo "<tr><td></td><td> There are no sales under the chosen conditions.</td></tr>";
                         }
                         else{
                             while($newArray=mysqli_fetch_array($res, MYSQLI_ASSOC)){
