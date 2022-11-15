@@ -98,7 +98,7 @@ p{
     margin-bottom: 50px;
 }
 
-[type="text"]{
+[type="text"],[type="number"]{
     width:80%;
     height:30px;
     border-radius: 7;
