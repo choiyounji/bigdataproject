@@ -79,18 +79,18 @@
         <div class="radios">
         <form action="yearsEstablished.php" method="POST">
         <p><div class="show"> Years: </div></br>
-        <label><input type= "radio" name = "showValues" value="All" checked> All</label></br>
-        <label><input type= "radio" name = "showValues" value="13">13<label></br>
-        <label><input type= "radio" name = "showValues" value="15">15<label></br>
-        <label><input type= "radio" name = "showValues" value="18">18<label></br>
-        <label><input type= "radio" name = "showValues" value="20">20<label></br>
-        <label><input type= "radio" name = "showValues" value="23">23<label></br>
-        <label><input type= "radio" name = "showValues" value="24">24<label></br>
-        <label><input type= "radio" name = "showValues" value="25">25<label></br>
-        <label><input type= "radio" name = "showValues" value="35">35<label></br>
-        <label><input type= "radio" name = "showValues" value="37">37<label></br>
+        <label><input type= "radio" name = "showValues" value="All"<?php if($showValues ==null||$showValues ==="(13,15,18,20,23,24,25,35,37)"){echo "checked";}?>> All</label></br>
+        <label><input type= "radio" name = "showValues" value="13"<?php if($showValues ==="(13)"){echo "checked";}?>>13<label></br>
+        <label><input type= "radio" name = "showValues" value="15"<?php if($showValues ==="(15)"){echo "checked";}?>>15<label></br>
+        <label><input type= "radio" name = "showValues" value="18"<?php if($showValues ==="(18)"){echo "checked";}?>>18<label></br>
+        <label><input type= "radio" name = "showValues" value="20"<?php if($showValues ==="(20)"){echo "checked";}?>>20<label></br>
+        <label><input type= "radio" name = "showValues" value="23"<?php if($showValues ==="(23)"){echo "checked";}?>>23<label></br>
+        <label><input type= "radio" name = "showValues" value="24"<?php if($showValues ==="(24)"){echo "checked";}?>>24<label></br>
+        <label><input type= "radio" name = "showValues" value="25"<?php if($showValues ==="(25)"){echo "checked";}?>>25<label></br>
+        <label><input type= "radio" name = "showValues" value="35"<?php if($showValues ==="(35)"){echo "checked";}?>>35<label></br>
+        <label><input type= "radio" name = "showValues" value="37"<?php if($showValues ==="(37)"){echo "checked";}?>>37<label></br>
         <input type="submit" name="submit" value="Run Analysis">
-
+        </p>
         </div>
     </body>
 </html>
