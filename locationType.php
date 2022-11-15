@@ -14,7 +14,6 @@
     <th>Total Sales</th>
 
 <?php
-$value = $_POST['showValues'];
 
 header('Content-Type: text/html; charset=UTF-8');
 $mysqli=mysqli_connect("localhost","team21","team21","team21");
@@ -23,9 +22,27 @@ if(mysqli_connect_errno()){
    exit();
 }
 else{
+    if(isset($_POST["showValues"])){
+        if($_POST["showValues"] == "Tier1"){
+            $showValues = "('Tier 1')";
+        }
+        elseif($_POST["showValues"] == "Tier2"){
+            $showValues = "('Tier 2')";
+        }
+        elseif($_POST["showValues"] == "Tier3"){
+            $showValues = "('Tier 3')";
+        }
+        else{
+        $showValues = "('Tier 1', 'Tier 2', 'Tier 3')";
+        }
+    }
+    else{
+        $showValues = "('Tier 1', 'Tier 2', 'Tier 3')";
+    }
    
-   $sql = "select oLocationType, SUM(iOutletSales) As totalSales
-   from locationTypeSales
+   $sql = "SELECT oLocationType, SUM(iOutletSales) As totalSales
+   from locationTypeSales 
+   WHERE oLocationType in ".$showValues."
    GROUP BY oLocationType;";
    $res = mysqli_query($mysqli, $sql);
    
@@ -49,10 +66,10 @@ else{
     <form action="locationType.php" method="POST">
         <p><div class="show"> Location Type: </div></br>
         
-        <label><input type= "radio" name = "showValues" value="All" <? if($value ==null||$value ==="All"){echo "checked";}?>> All</label></br>
-        <label><input type= "radio" name = "showValues" value="Tier1" <? if($value ==="Tier1"){echo "checked";}?>>Tier1<label></br>
-        <label><input type= "radio" name = "showValues" value="Tier2" <? if($value ==="Tier2"){echo "checked";}?>>Tier2<label></br>
-        <label><input type= "radio" name = "showValues" value="Tier3" <? if($value ==="Tier3"){echo "checked";}?>>Tier3<label></br>
+        <label><input type= "radio" name = "showValues" value="All" <?php if($showValues ==null||$showValues ==="('Tier 1', 'Tier 2', 'Tier 3')"){echo "checked";}?>> All</label></br>
+        <label><input type= "radio" name = "showValues" value="Tier1" <?php if($showValues ==="('Tier 1')"){echo "checked";}?>>Tier1<label></br>
+        <label><input type= "radio" name = "showValues" value="Tier2" <?php if($showValues ==="('Tier 2')"){echo "checked";}?>>Tier2<label></br>
+        <label><input type= "radio" name = "showValues" value="Tier3" <?php if($showValues ==="('Tier 3')"){echo "checked";}?>>Tier3<label></br>
     
         <input type="submit" name="submit" value="Run Analysis">
 </div>
