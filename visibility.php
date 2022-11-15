@@ -5,20 +5,11 @@
         <link rel="stylesheet" href="result.css">
     </head>
     <body>
-<<<<<<< HEAD
         <div class="title">Sales information based on Visibility </div>  
             <table>
                 <th>SALES_RANGE</th>
                 <th>Average Visibility</th>
                 <?php
-=======
-        <div class="title">Sales information based on visibility </div>  
-            <table>
-                <th>SALES_RANGE</th>
-                <th>averageVisibility</th>
-                <?php
-                    $value = $_POST['range'];
->>>>>>> 3b692c664712a68a56c3d387e6714c5a98597e00
                     header('Content-Type: text/html; charset=UTF-8');
                     $mysqli=mysqli_connect("localhost","team21","team21","team21");
                     if(mysqli_connect_errno()){
@@ -26,12 +17,7 @@
                         exit();
                     }
                     else{
-<<<<<<< HEAD
-                        
                         $rangeNum = isset($_POST["range"])? $_POST["range"] : 2000;
-=======
-                        $rangeNum = $_POST["range"]? $_POST["range"] : 2000;
->>>>>>> 3b692c664712a68a56c3d387e6714c5a98597e00
                         $sql = "SELECT FLOOR(iOutletSales/".$rangeNum.")*".$rangeNum." AS SALES_RANGE, avg(iVisibility) AS averageVisibility
                                 FROM visibilitySales
                                 GROUP BY FLOOR(iOutletSales/".$rangeNum.");";
@@ -55,11 +41,7 @@
             <form action="visibility.php" method="POST">
                 <p><div class="show"> Set sales range: </div></br>
                 <div class="checkboxs">
-<<<<<<< HEAD
                 <input type= range name = "range" min="1000" max="13000" value=<?php if(!isset($_POST["range"])){echo "2000";}else{echo $_POST["range"];}?> step="1000" id="myRange"> </br>
-=======
-                <input type= range name = "range" min="1000" max="13000" value=<?php if($value==null){echo "2000";}else{echo $value;}?> step="1000" id="myRange"> </br>
->>>>>>> 3b692c664712a68a56c3d387e6714c5a98597e00
                 Value: <span id="value"></span></p>
                 <input type="submit" name="submit" value="Run Analysis">
             </form>
