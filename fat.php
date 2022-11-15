@@ -70,10 +70,10 @@
         <div class="radios">
             <form action="fat.php" method="POST">
                 <p><div class="show"> SHOW: </div></br>
-                <label><input type= "radio" name = "showValues" value="All" <?php if($showValues ==null||$showValues ==="All"){echo "checked";}?>/> All</label></br>
-                <label><input type= "radio" name = "showValues" value="High Fat" <?php if($showValues==="High Fat"){echo "checked";}?>/>High Fat</label></br>
-                <label><input type= "radio" name = "showValues" value="Regular" <?php if($showValues==="Regular"){echo "checked";}?>/>Regular</label></br>
-                <label><input type= "radio" name = "showValues" value="Low Fat" <?php if($showValues==="Low Fat"){echo "checked";}?>/>Low Fat</label><p>
+                <label><input type= "radio" name = "showValues" value="All" <?php if($showValues ==null||$showValues ==="('Low Fat', 'Regular', 'High Fat')"){echo "checked";}?>/> All</label></br>
+                <label><input type= "radio" name = "showValues" value="High Fat" <?php if($showValues==="('High Fat')"){echo "checked";}?>/>High Fat</label></br>
+                <label><input type= "radio" name = "showValues" value="Regular" <?php if($showValues==="('Regular')"){echo "checked";}?>/>Regular</label></br>
+                <label><input type= "radio" name = "showValues" value="Low Fat" <?php if($showValues==="('Low Fat')"){echo "checked";}?>/>Low Fat</label><p>
                 <input type="submit" name="submit" value="Run Analysis">
         </div>
     </body>
