@@ -7,7 +7,7 @@
 
 
     <body>
-        <div class="title">Sales information based on Outlet Location Type and Outlet Type </div>
+        <div class="title">Sales information based on </br>Outlet Location Type and Outlet Type </div>
       
 <table>
     <th>Outlet Location Type</th>
