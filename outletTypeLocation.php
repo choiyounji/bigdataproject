@@ -4,11 +4,8 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="result.css">
     </head>
-
-
     <body>
-        <div class="title">Sales information based on </br>Outlet Location Type and Outlet Type </div>
-      
+        <div class="title">Sales information based on </br> Outlet Location Type and Outlet Type </div>
 <table>
     <th>Outlet Location Type</th>
     <th>Outlet Type</th>

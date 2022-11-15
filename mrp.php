@@ -77,6 +77,7 @@
                     <label><input type= "checkbox" name = "showValues[]" value="Snack Foods" <?php if(array_search('Snack Foods', $selectedTypes)===0||array_search('Snack Foods', $selectedTypes)){echo "checked";}?>></input></label>Snack Foods</br>
                     <label><input type= "checkbox" name = "showValues[]" value="Soft Drinks" <?php if(array_search('Soft Drinks', $selectedTypes)===0||array_search('Soft Drinks', $selectedTypes)){echo "checked";}?>></input></label>Soft Drinks</br>
                     <label><input type= "checkbox" name = "showValues[]" value="Starcky Foods" <?php if(array_search('Starcky Foods', $selectedTypes)===0||array_search('Starcky Foods', $selectedTypes)){echo "checked";}?>></input></label>Starcky Foods</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Others" <?php if(array_search('Others', $selectedTypes)){echo "checked";}?>></input></label>Others
                 </p>
                 <input type="submit" name="submit" value="Run Analysis" />
             </form>

@@ -21,7 +21,6 @@
                 }
                 else{
                     if(isset($_POST["showValues"])){
-                        //$selectedTypes = array();
                         foreach($_POST["showValues"] as $type){
                             if($type != "All"){
                                 array_push($selectedTypes, $type);
@@ -40,7 +39,7 @@
                         $list = "Baking Goods', 'Breads', 'Breakfast', 'Canned', 'Dairy', 'Frozen Foods', 'Fruits and Vegetables', 'Hard Drinks', 
                                 'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starcky Foods', 'Others";
                     }
-                    
+
                     $sql = "SELECT iType, COUNT(iType) AS count, SUM(iOutletSales) AS totalSales, AVG(iOutletSales) AS averageSales
                             FROM typeSales
                             WHERE iType in ('".$list."')
