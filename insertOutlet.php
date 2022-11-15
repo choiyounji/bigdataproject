@@ -60,6 +60,7 @@
                     else{
                         printf("Could not insert record : %s\n", mysqli_error($mysqli));
                     }
+                    mysqli_free_result($ret);
                     mysqli_free_result($res);
                     mysqli_close($mysqli);
                 }
