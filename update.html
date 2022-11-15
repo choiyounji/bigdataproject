@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="insert">
+ 
+    <div class = "inputs">
+        <div class="title2">
+            Update Item
+            </div>
+    <form action="insertItem.php" method="POST">
+        <p>Identifier </br><input type="text" name="iIdentifier" > 
+        <p>Weight</br> <input type="number" name="iWeight" > </p>
+        <p>Fat Content</br>   <select name="iFatContent">
+            <option value="Low Fat" selected>Low Fat</option>
+            <option value="Regular">Regular</option>
+            <option value="High Fat">High Fat</option>
+        </select> </p>
+        <p>Type</br><select name="iType">
+        <option value="Baking Goods">Baking Goods</option>
+        <option value="Breads">Breads</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Canned">Canned</option>
+        <option value="Dairy" selected >Dairy</option>
+        <option value="Frozen Foods">Frozen Foods</option>
+        <option value="Fruits and Vegetables">Fruits and Vegetables</option>
+        <option value="Hard Drinks">Hard Drinks</option>
+        <option value="Health and Hygiene">Health and Hygiene</option>
+        <option value="Household">Household</option>
+        <option value="Meat">Meat</option>
+        <option value="Seafood">Seafood</option>
+        <option value="Snack Foods">Snack Foods</option>
+        <option value="Soft Drinks">Soft Drinks</option>
+        <option value="Starcky Foods">Starcky Foods</option>
+        </select>  </p> 
+        
+            <p><input type="submit" name="submit" value="Update Item"></p>
+    </form>    
+
+</div>
+<div class = "inputs">
+    <div class="title2">
+        Update Outlet
+        </div>
+<form action="insertItem.php" method="POST">
+    <p>Identifier </br><input type="text" name="iIdentifier" > 
+    <p>Establishment Year</br> <input type="text" name="ID" > </p>
+    <p>Outlet Size</br> <select name="Outlet Size">
+        <option value="Small" selected>Small</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+    </select> </p>
+    <p>Location Type</br> <select name="Location Type">
+        <option value="Tier1" selected>Tier1</option>
+        <option value="Tier2">Tier2</option>
+        <option value="Tier3">Tier3</option>
+    </select></p> 
+    <p>Outlet Type</br><select name="Outlet Type">
+        <option value="Grocery store" selected>Grocery store</option>
+        <option value="Supermarket Type1">Supermarket Type1</option>
+        <option value="Supermarket Type2">Supermarket Type2</option>
+        <option value="Supermarket Type3">Supermarket Type3</option>
+    </select> </p> 
+    <p><input type="submit" name="submit" value="Update Outlet"></p>
+</form>    
+
+</div>
+<div class = "inputs">
+    <div class="title2">
+        Update Item Sales
+        </div>
+<form action="insertItem.php" method="POST">
+    <p>Item Identifier </br><input type="text" name="Item Identifier" > 
+    <p>Outlet Identifier</br> <input type="text" name="ID" > </p>
+    <p>Item Outlet Sales</br> <input type="text" name="ID" > </p>
+    <p>Item visibility</br> <input type="text" name="ID"></p> 
+    <p>Item MRP</br> <input type="text" name="ID"></p> 
+    <p><input type="submit" name="submit" value="Update Item Sales"></p>
+</form>    
+
+</div>
+
+
+</body>
+</html>
