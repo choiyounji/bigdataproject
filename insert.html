@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <header>
-        <a href="select.html">← HOME</a>
-      </header>
-    <div class="insert">
-<div class = "inputs">
-        <div class="title2">
-            Insert Item
-            </div>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="select.html">← HOME</a>
+        </header>
+        <div class="insert">
+            <div class = "inputs">
+                <div class="title2">
+                    Insert Item
+                </div>
+               
     <form action="insertItem.php" method="POST">
         <p>Identifier </br><input type="text" name="iIdentifier" > 
-        <p>Weight</br> <input type="number" name="iWeight" > </p>
+        <p>Weight</br> <input type="number" name="iWeight" step=0.00001 > </p>
         <p>Fat Content</br> <select name="iFatContent">
             <option value="Low Fat" selected>Low Fat</option>
             <option value="Regular">Regular</option>
@@ -50,7 +50,7 @@
         </div>
 <form action="insertOutlet.php" method="POST">
     <p>Identifier </br><input type="text" name="oIdentifier" > 
-    <p>Establishment Year</br> <input type="number" name="oEstablishmentYear" > </p>
+    <p>Establishment Year</br> <input type="number" name="oEstablishmentYear" step=0.00001 > </p>
     <p>Outlet Size</br> <select name="oSize">
         <option value="Small" selected>Small</option>
         <option value="Medium">Medium</option>
@@ -85,7 +85,6 @@
 </form>    
 
 </div>
-    </div>
 
 </body>
 </html>
