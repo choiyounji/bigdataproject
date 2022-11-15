@@ -7,6 +7,9 @@
 
 
     <body>
+    <header>
+      <a href="select.html">← HOME</a>
+    </header>
         <div class="title">Sales information based on Oulet Location Type </div>
       
 <table>

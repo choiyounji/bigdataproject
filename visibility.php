@@ -5,6 +5,9 @@
         <link rel="stylesheet" href="result.css">
     </head>
     <body>
+    <header>
+      <a href="select.html">← HOME</a>
+    </header>
         <div class="title">Sales information based on Visibility </div>  
             <table>
                 <th>SALES_RANGE</th>

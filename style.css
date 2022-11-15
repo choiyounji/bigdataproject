@@ -107,7 +107,6 @@ p{
    
 }
 
-
 .insert{
    width:100%;
     display:table;
@@ -120,3 +119,13 @@ p{
     display:table-cell;
     
 }
+
+a:link {
+    color: #FF8F3D;
+  }
+  a:hover {
+    color: rgb(255, 68, 6);
+  }
+  a:active {
+    color: rgb(84, 84, 84);
+  }

@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="result.css">
     </head>
     <body>
-    <header type= "home">
+    <header>
       <a href="select.html">← HOME</a>
     </header>
         <div class="title">Insert Item Result </div>
