@@ -70,10 +70,10 @@
             <form action="outletSize.php" method="POST">
                 <p>
                     <div class="show"> SHOW: </div></br>
-                    <label><input type= "radio" name = "showValues" value="All" <?php if($value ==null||$value ==="All"){echo "checked";}?>> All</label></br>
-                    <label><input type= "radio" name = "showValues" value="High" <?php if($value==="High"){echo "checked";}?>>High<label></br>
-                    <label><input type= "radio" name = "showValues" value="Medium" <?php if($value==="Medium"){echo "checked";}?>>Medium<label></br>
-                    <label><input type= "radio" name = "showValues" value="Small" <?php if($value==="Small"){echo "checked";}?>>Small<label>
+                    <label><input type= "radio" name = "showValues" value="All" <?php if($value ==null||$value ==="('High', 'Medium', 'Small')"){echo "checked";}?>> All</label></br>
+                    <label><input type= "radio" name = "showValues" value="High" <?php if($value==="('High')"){echo "checked";}?>>High<label></br>
+                    <label><input type= "radio" name = "showValues" value="Medium" <?php if($value==="('Medium')"){echo "checked";}?>>Medium<label></br>
+                    <label><input type= "radio" name = "showValues" value="Small" <?php if($value==="('Small')"){echo "checked";}?>>Small<label>
                 </p>
                 <input type="submit" name="submit" value="Run Analysis">
         </div>

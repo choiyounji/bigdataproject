@@ -10,30 +10,35 @@
             <th>Item Type</th>
             <th>Fat Content</th>
             <th>Average Sales</th>
-
             <?php
-        
-
                 header('Content-Type: text/html; charset=UTF-8');
                 $mysqli=mysqli_connect("localhost","team21","team21","team21");
+                $selectedTypes = array();
                 if(mysqli_connect_errno()){
                     printf("Connect failed: %s\n", mysqli_error($mysqli));
                     exit();
                 }
                 else{
-                    $selectedTypes = array();
-                    foreach($_POST["showValues"] as $type){
-                        if($type != "All"){
-                            array_push($selectedTypes, $type);
+                    if(isset($_POST["showValues"])){
+                        $value = $_POST['showValues'];
+                        $array = array($value);
+                        foreach($_POST["showValues"] as $type){
+                            if($type != "All"){
+                                array_push($selectedTypes, $type);
+                            }
+                        }
+                        $list = "";
+                        if(empty($selectedTypes)){
+                            $list = "Baking Goods', 'Breads', 'Breakfast', 'Canned', 'Dairy', 'Frozen Foods', 'Fruits and Vegetables', 'Hard Drinks', 
+                                    'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starcky Foods', 'Others";
+                        }
+                        else{
+                            $list = implode("', '", $selectedTypes);
                         }
                     }
-                    $list = "";
-                    if(empty($selectedTypes)){
-                        $list = "Baking Goods', 'Breads', 'Breakfast', 'Canned', 'Dairy', 'Frozen Foods', 'Fruits and Vegetables', 'Hard Drinks', 
-                                'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starcky Foods', 'Others";
-                    }
                     else{
-                        $list = implode("', '", $selectedTypes);
+                        $list = "Baking Goods', 'Breads', 'Breakfast', 'Canned', 'Dairy', 'Frozen Foods', 'Fruits and Vegetables', 'Hard Drinks', 
+                                    'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starcky Foods', 'Others";
                     }
                     $sql = "SELECT iType, iFatContent, AVG(iOutletSales) AS averageSales
                             FROM typeFatSales
@@ -72,7 +77,7 @@
                     <label><input type= "checkbox" name = "showValues[]" value="Hard Drinks" <?php if(array_search('Hard Drinks', $selectedTypes)===0||array_search('Hard Drinks', $selectedTypes)){echo "checked";}?>></input></label>Hard Drinks</br>
                     <label><input type= "checkbox" name = "showValues[]" value="Health and Hygiene" <?php if(array_search('Health and Hygiene', $selectedTypes)===0||array_search('Health and Hygiene', $selectedTypes)){echo "checked";}?>></input></label>Health and Hygiene</br>
                     <label><input type= "checkbox" name = "showValues[]" value="Household" <?php if(array_search('Household', $selectedTypes)===0||array_search('Household', $selectedTypes)){echo "checked";}?>></input></label>Household</br>
-                    <label><input type= "checkbox" name = "showValues[]" value="Meat" <?php if(array_search('Meat', $selectedTypes)===0||array_search('Meat', $selectedTypes)===0){echo "checked";}?>></input></label>Meat</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Meat" <?php if(array_search('Meat', $selectedTypes)===0||array_search('Meat', $selectedTypes)){echo "checked";}?>></input></label>Meat</br>
                     <label><input type= "checkbox" name = "showValues[]" value="Seafood" <?php if(array_search('Seafood', $selectedTypes)===0||array_search('Seafood', $selectedTypes)){echo "checked";}?>></input></label>Seafood</br>
                     <label><input type= "checkbox" name = "showValues[]" value="Snack Foods" <?php if(array_search('Snack Foods', $selectedTypes)===0||array_search('Snack Foods', $selectedTypes)){echo "checked";}?>></input></label>Snack Foods</br>
                     <label><input type= "checkbox" name = "showValues[]" value="Soft Drinks" <?php if(array_search('Soft Drinks', $selectedTypes)===0||array_search('Soft Drinks', $selectedTypes)){echo "checked";}?>></input></label>Soft Drinks</br>

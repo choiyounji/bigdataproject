@@ -45,20 +45,20 @@
     <div class="title2">
         Insert Outlet
         </div>
-<form action="insertItem.php" method="POST">
-    <p>Identifier </br><input type="text" name="ID" > 
-    <p>Establishment Year</br> <input type="text" name="ID" > </p>
-    <p>Outlet Size</br> <select name="Outlet Size">
+<form action="insertOutlet.php" method="POST">
+    <p>Identifier </br><input type="text" name="oIdentifier" > 
+    <p>Establishment Year</br> <input type="number" name="oEstablishmentYear" > </p>
+    <p>Outlet Size</br> <select name="oSize">
         <option value="Small" selected>Small</option>
         <option value="Medium">Medium</option>
         <option value="High">High</option>
     </select>  </p>
-    <p>Location Type</br> <select name="Location Type">
+    <p>Location Type</br> <select name="oLocationType">
         <option value="Tier1" selected>Tier1</option>
         <option value="Tier2">Tier2</option>
         <option value="Tier3">Tier3</option>
     </select></p> 
-    <p>Outlet Type</br> <select name="Outlet Type">
+    <p>Outlet Type</br> <select name="oType">
         <option value="Grocery store" selected>Grocery store</option>
         <option value="Supermarket Type1">Supermarket Type1</option>
         <option value="Supermarket Type2">Supermarket Type2</option>

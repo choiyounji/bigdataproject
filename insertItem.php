@@ -19,7 +19,7 @@
                     exit();
                 }
                 else{
-                    $sql = "SELECT iIdentifier FROM itemInfo WHERE iIdentifier='".$_POST['iIdentifier']."'";
+                    $sql = "SELECT iIdentifier FROM itemInfo WHERE iIdentifier='".$_POST['iIdentifier']."';";
 $ret = mysqli_query($mysqli, $sql);
 $exist = mysqli_num_rows($ret);
 if($exist>0){
