@@ -22,18 +22,23 @@
                 }
                 else{
                     $selectedTypes = array();
-                    foreach($_POST["showValues"] as $type){
-                        if($type != "All"){
+                    $list = "";
+
+                    if(isset($_POST["showValues"])){
+                        foreach($_POST["showValues"] as $type){
                             array_push($selectedTypes, $type);
                         }
-                    }
-                    $list = "";
-                    if(empty($selectedTypes)){
-                        $list = "Baking Goods', 'Breads', 'Breakfast', 'Canned', 'Dairy', 'Frozen Foods', 'Fruits and Vegetables', 'Hard Drinks', 
-                                'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starcky Foods', 'Others";
+                        if($selectedTypes == array("All")){
+                            $list = "Baking Goods', 'Breads', 'Breakfast', 'Canned', 'Dairy', 'Frozen Foods', 'Fruits and Vegetables', 'Hard Drinks', 
+                                    'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starcky Foods', 'Others";
+                        }
+                        else{
+                            $list = implode("', '", $selectedTypes);
+                        }
                     }
                     else{
-                        $list = implode("', '", $selectedTypes);
+                        $list = "Baking Goods', 'Breads', 'Breakfast', 'Canned', 'Dairy', 'Frozen Foods', 'Fruits and Vegetables', 'Hard Drinks', 
+                                    'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starcky Foods', 'Others";
                     }
                     $sql = "SELECT iType, AVG(iMrp) AS averageMrp
                             FROM typeMrpSales
