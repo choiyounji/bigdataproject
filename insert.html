@@ -1,92 +1,101 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="select.html">← HOME</a>
+        </header>
+        <div class="insert">
+            <div class = "inputs">
+                <div class="title2">
+                    Insert Item
+                </div>
+                <form action="insertItem.php" method="POST">
+                    <p>Identifier </br><input type="text" name="iIdentifier" > 
+                    <p>Weight</br> <input type="number" name="iWeight" > </p>
+                    <p>Fat Content</br> <select name="iFatContent">
+                        <option value="Low Fat" selected>Low Fat</option>
+                        <option value="Regular">Regular</option>
+                        <option value="High Fat">High Fat</option>
+                    </select> </p>
+                    <p>Type</br> <select name="iType">
 
-
-<body>
-    <header>
-        <a href="select.html">← HOME</a>
-      </header>
-    <div class="insert">
-<div class = "inputs">
-        <div class="title2">
-            Insert Item
+                        <option value="Baking Goods">Baking Goods</option>
+                        <option value="Breads">Breads</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Canned">Canned</option>
+                        <option value="Dairy" selected >Dairy</option>
+                        <option value="Frozen Foods">Frozen Foods</option>
+                        <option value="Fruits and Vegetables">Fruits and Vegetables</option>
+                        <option value="Hard Drinks">Hard Drinks</option>
+                        <option value="Health and Hygiene">Health and Hygiene</option>
+                        <option value="Household">Household</option>
+                        <option value="Meat">Meat</option>
+                        <option value="Seafood">Seafood</option>
+                        <option value="Snack Foods">Snack Foods</option>
+                        <option value="Soft Drinks">Soft Drinks</option>
+                        <option value="Starcky Foods">Starcky Foods</option>
+                        </select></p> 
+                    <p><input type="submit" name="submit" value="INSERT Item"></p>
+                </form>    
             </div>
-    <form action="insertItem.php" method="POST">
-        <p>Identifier </br><input type="text" name="iIdentifier" > 
-        <p>Weight</br> <input type="number" name="iWeight" > </p>
-        <p>Fat Content</br> <select name="iFatContent">
-            <option value="Low Fat" selected>Low Fat</option>
-            <option value="Regular">Regular</option>
-            <option value="High Fat">High Fat</option>
-        </select> </p>
-        <p>Type</br> <select name="iType">
-
-            <option value="Baking Goods">Baking Goods</option>
-            <option value="Breads">Breads</option>
-            <option value="Breakfast">Breakfast</option>
-            <option value="Canned">Canned</option>
-            <option value="Dairy" selected >Dairy</option>
-            <option value="Frozen Foods">Frozen Foods</option>
-            <option value="Fruits and Vegetables">Fruits and Vegetables</option>
-            <option value="Hard Drinks">Hard Drinks</option>
-            <option value="Health and Hygiene">Health and Hygiene</option>
-            <option value="Household">Household</option>
-            <option value="Meat">Meat</option>
-            <option value="Seafood">Seafood</option>
-            <option value="Snack Foods">Snack Foods</option>
-            <option value="Soft Drinks">Soft Drinks</option>
-            <option value="Starcky Foods">Starcky Foods</option>
-            </select></p> 
-        <p><input type="submit" name="submit" value="INSERT Item"></p>
-    </form>    
-
-</div>
-<div class = "inputs">
-    <div class="title2">
-        Insert Outlet
+            <div class = "inputs">
+                <div class="title2">
+                    Insert Outlet
+                </div>
+                <form action="insertOutlet.php" method="POST">
+                    <p>
+                        Identifier </br>
+                        <input type="text" name="oIdentifier" > 
+                    </p>
+                    <p>
+                        Establishment Year</br> 
+                        <input type="number" name="oEstablishmentYear" /> 
+                    </p>
+                    <p>
+                        Outlet Size</br> 
+                        <select name="oSize">
+                            <option value="Small" selected>Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>  
+                    </p>
+                    <p>
+                        Location Type</br> 
+                        <select name="oLocationType">
+                            <option value="Tier1" selected>Tier1</option>
+                            <option value="Tier2">Tier2</option>
+                            <option value="Tier3">Tier3</option>
+                        </select>
+                    </p> 
+                    <p>
+                        Outlet Type</br> 
+                        <select name="oType">
+                            <option value="Grocery store" selected>Grocery store</option>
+                            <option value="Supermarket Type1">Supermarket Type1</option>
+                            <option value="Supermarket Type2">Supermarket Type2</option>
+                            <option value="Supermarket Type3">Supermarket Type3</option>
+                        </select>
+                    </p> 
+                    <p><input type="submit" name="submit" value="INSERT Outlet" /></p>
+                </form>    
+                <div class = "inputs">
+                    <div class="title2">
+                        Insert Item Sales
+                    </div>
+                    <form action="insertItem.php" method="POST">
+                        <p>Item Identifier </br><input type="text" name="Item Identifier" > 
+                        <p>Outlet Identifier</br> <input type="text" name="ID" > </p>
+                        <p>Item Outlet Sales</br> <input type="text" name="ID" > </p>
+                        <p>Item visibility</br> <input type="text" name="ID"></p> 
+                        <p>Item MRP</br> <input type="text" name="ID"></p> 
+                        <p><input type="submit" name="submit" value="INSERT Item Sales"></p>
+                    </form> 
+                </div>   
+            </div>
         </div>
-<form action="insertOutlet.php" method="POST">
-    <p>Identifier </br><input type="text" name="oIdentifier" > 
-    <p>Establishment Year</br> <input type="number" name="oEstablishmentYear" > </p>
-    <p>Outlet Size</br> <select name="oSize">
-        <option value="Small" selected>Small</option>
-        <option value="Medium">Medium</option>
-        <option value="High">High</option>
-    </select>  </p>
-    <p>Location Type</br> <select name="oLocationType">
-        <option value="Tier1" selected>Tier1</option>
-        <option value="Tier2">Tier2</option>
-        <option value="Tier3">Tier3</option>
-    </select></p> 
-    <p>Outlet Type</br> <select name="oType">
-        <option value="Grocery store" selected>Grocery store</option>
-        <option value="Supermarket Type1">Supermarket Type1</option>
-        <option value="Supermarket Type2">Supermarket Type2</option>
-        <option value="Supermarket Type3">Supermarket Type3</option>
-    </select></p> 
-    <p><input type="submit" name="submit" value="INSERT Outlet"></p>
-</form>    
-
-</div>
-<div class = "inputs">
-    <div class="title2">
-        Insert Item Sales
-        </div>
-<form action="insertItem.php" method="POST">
-    <p>Item Identifier </br><input type="text" name="Item Identifier" > 
-    <p>Outlet Identifier</br> <input type="text" name="ID" > </p>
-    <p>Item Outlet Sales</br> <input type="text" name="ID" > </p>
-    <p>Item visibility</br> <input type="text" name="ID"></p> 
-    <p>Item MRP</br> <input type="text" name="ID"></p> 
-    <p><input type="submit" name="submit" value="INSERT Item Sales"></p>
-</form>    
-
-</div>
-    </div>
-
-</body>
+    </body>
 </html>
