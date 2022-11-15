@@ -38,17 +38,13 @@ table{
         font-size: 45px;
         font-weight: bold;
     }
-    [type="radio"]{
+    [type="radio"],[type="checkbox"]{
         width: 20px;
         height:20px;
         margin-bottom:30px;
     
     }
-    [type="checkbox"]{
-        width: 20px;
-        height:20px;
-
-    }
+ 
     [type="radio"],[type="checkbox"]:checked {
         accent-color:#FF8F3D;
         

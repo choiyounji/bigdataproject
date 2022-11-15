@@ -57,17 +57,27 @@ button:hover{
    
   
 }
-.submitbtn{
+[type="submit"]{
     background-color: #FF8F3D;
     color:white;
-    font-family: 'Poppins', sans-serif;
     border-radius: 5px;
     border: 2px;
-    width: 100px;
+    width: 150px;
     height: 60px;
     font-size: 15px;
-    margin-right:50px;
-
+    text-shadow:0 1px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+                      0 2px 0 -1px rgba(0,0,0,0.13), 
+                      0 3px 0 -1px rgba(0,0,0,0.08), 
+                      0 3px 13px -1px rgba(0,0,0,0.21);
+                      margin-top: 2%;
+  }
+  [type="submit"]:hover{
+    top: 1px;
+    border-color: rgba(0,0,0,0.34) rgba(0,0,0,0.21) rgba(0,0,0,0.21);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.89),0 1px rgba(0,0,0,0.05) inset;
+    position: relative;
+    
 }
 .left{
     display:table
@@ -83,6 +93,30 @@ right:0;
 
 margin: auto;
 }
+p{
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+[type="text"]{
+    width:80%;
+    height:30px;
+    border-radius: 7;
+    outline: none;
+    border:0;
+   
+}
 
 
-
+.insert{
+   width:100%;
+    display:table;
+    transform:translateY(5%);
+    margin: 20px;
+    
+}
+.inputs{
+    width:30%;
+    display:table-cell;
+    
+}
