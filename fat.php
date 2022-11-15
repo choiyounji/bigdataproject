@@ -12,6 +12,7 @@
             <th>Total Sales</th>
             <th>Average Sales</th>
             <?php
+                $value = $_POST["showValues"];
                 header('Content-Type: text/html; charset=UTF-8');
                 $mysqli=mysqli_connect("localhost","team21","team21","team21");
                 if(mysqli_connect_errno()){
