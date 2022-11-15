@@ -21,6 +21,9 @@ a:hover {
 a:active {
   color: rgb(84, 84, 84);
 }
+a:visited {
+  color: rgb(143, 0, 71);
+}
 
 table{
     float:left;

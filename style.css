@@ -122,10 +122,13 @@ p{
 
 a:link {
     color: #FF8F3D;
-  }
-  a:hover {
+}
+a:hover {
     color: rgb(255, 68, 6);
-  }
-  a:active {
+}
+a:active {
     color: rgb(84, 84, 84);
-  }
+}
+a:visited {
+    color: rgb(143, 0, 71);
+}
