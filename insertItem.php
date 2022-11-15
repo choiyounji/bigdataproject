@@ -5,6 +5,9 @@
         <link rel="stylesheet" href="result.css">
     </head>
     <body>
+    <header>
+      <a href="select.html">← HOME</a>
+    </header>
         <div class="title">Insert Item Result </div>
         <table>
             <th>iIdentifier</th>

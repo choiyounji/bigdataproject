@@ -5,6 +5,9 @@
         <link rel="stylesheet" href="result.css">
     </head>
     <body>
+    <header>
+      <a href="select.html">← HOME</a>
+    </header>
         <div class="title">Sales information based on Item Type and Fat </div>     
         <table>
             <th>Item Type</th>

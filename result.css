@@ -12,6 +12,15 @@ body{
     color:#2E3190;
     font-weight: bold;
 }
+a:link {
+  color: #FF8F3D;
+}
+a:hover {
+  color: rgb(255, 68, 6);
+}
+a:active {
+  color: rgb(84, 84, 84);
+}
 
 table{
     float:left;
@@ -37,6 +46,9 @@ table{
         color:#FF8F3D;
         font-size: 45px;
         font-weight: bold;
+    }
+    .home{
+      color: #FF8F3D;
     }
     [type="radio"],[type="checkbox"]{
         width: 20px;
