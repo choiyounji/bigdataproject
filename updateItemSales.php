@@ -171,6 +171,7 @@
                         else{
                             printf("Could not update record : %s\n", mysqli_error($mysqli));
                         }
+                      
                         mysqli_free_result($after_res);
                         mysqli_close($mysqli);
                     }
