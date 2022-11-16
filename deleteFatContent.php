@@ -44,7 +44,7 @@
                 $ret = mysqli_query($mysqli, $sql);
                 $exist = mysqli_num_rows($ret);
                 if ($exist <= 0) {
-                    echo "<tr><td></td><td> The fat content you entered does not exist. </td></tr>";
+                    echo "<tr><td></td><td> The Fat Content you entered does not exist. </td></tr>";
                     exit(0);
                 } else {
                     while ($newArray = mysqli_fetch_array($ret, MYSQLI_ASSOC)) {

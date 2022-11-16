@@ -55,9 +55,6 @@
                             mysqli_query($mysqli, "INSERT into outlet (oIdentifier,oEstablishmentYear,oSize,oLocationType,oType,oYearsEstablished) values ('".$_POST["oIdentifier"]."',".$_POST["oEstablishmentYear"].",'".$_POST["oSize"]."','".$_POST["oLocationType"]."','".$_POST["oType"]."',".$YearsEstablished.");");
                             mysqli_query($mysqli, "INSERT into itemSales (iIdentifier,oIdentifier,iOutletSales,iVisibility,iMrp) values ('".$_POST["iIdentifier"]."','".$_POST["oIdentifier"]."',".$_POST["iOutletSales"].", ".$_POST["iVisibility"].", ".$_POST["iMrp"].");");
                             mysqli_commit($mysqli);
-                        
-            
-        
                             $sql = "SELECT * FROM itemSales WHERE iIdentifier='".$_POST['iIdentifier']."' AND oIdentifier='".$_POST['oIdentifier']."';";
                             $res = mysqli_query($mysqli, $sql);
                             if($res){

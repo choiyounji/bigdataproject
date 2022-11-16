@@ -53,7 +53,7 @@
                                 $oSize=$newArray['oSize'];
                                 $oLocationType=$newArray['oLocationType'];
                                 $oType=$newArray['oType'];
-                                $YearsEstablished = $newArray["oEstablishmentYear"];
+                                $YearsEstablished = $newArray['oYearsEstablished'];
                                 echo "<tr><td>".$oIdentifier."</td><td>".$oEstablishmentYear."</td> <td>".$oSize."</td> <td>".$oLocationType."</td><td>".$oType."</td><td>".$YearsEstablished."</td></tr>";
                             }
                         }
@@ -78,8 +78,9 @@
                         exit();
                     }
                     else{
+                        $oYearsEstablished = 2022-$_POST["oEstablishmentYear"];
                         $update_sql = " UPDATE outlet 
-                                        SET oEstablishmentYear=".$_POST["oEstablishmentYear"].", oSize='".$_POST["oSize"]."', oLocationType='".$_POST["oLocationType"]."', oType='".$_POST["oType"]."',oYearsEstablished=".$YearsEstablished."
+                                        SET oEstablishmentYear=".$_POST["oEstablishmentYear"].", oSize='".$_POST["oSize"]."', oLocationType='".$_POST["oLocationType"]."', oType='".$_POST["oType"]."',oYearsEstablished=".$oYearsEstablished."
                                         WHERE oIdentifier ='".$_POST["oIdentifier"]."';";
                         $update_res = mysqli_query($mysqli,$update_sql);
                         if($update_res){
@@ -92,7 +93,8 @@
                                     $oSize=$newArray['oSize'];
                                     $oLocationType=$newArray['oLocationType'];
                                     $oType=$newArray['oType'];
-                                    echo "<tr><td>".$oIdentifier."</td><td>".$oEstablishmentYear."</td> <td>".$oSize."</td> <td>".$oLocationType."</td><td>".$oType."</td><td>".$YearsEstablished."</td></tr>";
+                                    $oYearsEstablished = 2022-$_POST["oEstablishmentYear"];
+                                    echo "<tr><td>".$oIdentifier."</td><td>".$oEstablishmentYear."</td> <td>".$oSize."</td> <td>".$oLocationType."</td><td>".$oType."</td><td>".$oYearsEstablished."</td></tr>";
                                 }
 
                                 $update_outletSizeSales_sql = "UPDATE outletSizeSales 
@@ -111,9 +113,9 @@
                                     printf("Could not update locationTypeSales : %s\n", mysqli_error($mysqli));
                                 }
 
-                                $oEstablishmentYear = 2022-$_POST["oYearsEstablished"];
+                                $oYearsEstablished = 2022-$_POST["oEstablishmentYear"];
                                 $update_yearsEstablishedSales_sql = "UPDATE yearsEstablishedSales 
-                                                                    SET oYearsEstablished=".$_POST["oYearsEstablished"].", oEstablishmentYear=".$_POST["oEstablishmentYear"]."
+                                                                    SET oYearsEstablished=".$oYearsEstablished."
                                                                     WHERE oIdentifier='".$_POST['oIdentifier']."';";
                                 $update_yearsEstablishedSales_res= mysqli_query($mysqli, $update_yearsEstablishedSales_sql);
                                 if(!$update_yearsEstablishedSales_res){
