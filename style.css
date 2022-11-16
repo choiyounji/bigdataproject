@@ -107,7 +107,6 @@ p{
    
 }
 
-
 .insert{
    width:100%;
     display:table;
@@ -116,7 +115,33 @@ p{
     
 }
 .inputs{
-    width:30%;
+    width:20%;
     display:table-cell;
     
 }
+
+.ionicon{
+    fill: #FF8F3D;
+    color: #FF8F3D;
+  }
+  .ionicon:hover{
+    fill: #ff4406;
+    color: #ff4406;
+  }
+  .ionicon:active {
+    color: rgb(84, 84, 84);
+    fill: rgb(84, 84, 84);
+  }
+
+a:link {
+    text-decoration: none;
+    color: #FF8F3D;
+    margin: 1%;
+}
+a:hover {
+    color: #ff4406;
+}
+a:active {
+    color: rgb(84, 84, 84);
+}
+

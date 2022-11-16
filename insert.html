@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body class="insert">
- 
-    <div class = "inputs">
-        <div class="title2">
-            Insert Item
-            </div>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="select.php">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" width="30px" height="30px" ViewBox="0 0 512 512">
+                    <path d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+                    <path d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+                </svg>
+                HOME
+            </a>
+        </header>
+        <div class="insert">
+            <div class = "inputs">
+                <div class="title2">
+                    Insert Item
+                </div>
+               
     <form action="insertItem.php" method="POST">
         <p>Identifier </br><input type="text" name="iIdentifier" > 
-        <p>Weight</br> <input type="number" name="iWeight" > </p>
+        <p>Weight</br> <input type="number" name="iWeight" step=0.00001 > </p>
         <p>Fat Content</br> <select name="iFatContent">
             <option value="Low Fat" selected>Low Fat</option>
             <option value="Regular">Regular</option>
@@ -47,7 +56,7 @@
         </div>
 <form action="insertOutlet.php" method="POST">
     <p>Identifier </br><input type="text" name="oIdentifier" > 
-    <p>Establishment Year</br> <input type="number" name="oEstablishmentYear" > </p>
+    <p>Establishment Year</br> <input type="number" name="oEstablishmentYear" step=0.00001 > </p>
     <p>Outlet Size</br> <select name="oSize">
         <option value="Small" selected>Small</option>
         <option value="Medium">Medium</option>
@@ -82,7 +91,6 @@
 </form>    
 
 </div>
-
 
 </body>
 </html>
