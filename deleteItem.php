@@ -38,7 +38,7 @@
                         $iFatContent = $newArray['iFatContent'];
                         $iType = $newArray['iType'];
                         echo "<tr><td>" . $iIdentifier . "</td><td>" . $iWeight . "</td> <td>" . $iFatContent . "</td> <td>" . $iType . "</td></tr>
-        <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr></table></br> ";
+                        <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr></table></br> ";
                     }
                     echo "<div class='show'> Before</div>
     <table>

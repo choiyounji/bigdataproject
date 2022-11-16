@@ -51,7 +51,7 @@ if($exist<=0){
         <th>iWeight</th>
         <th>iFatContent</th>
         <th>iType</th>";
-                    $sql = "UPDATE itemInfo SET iWeight='".$_POST["iWeight"]."',iFatContent='".$_POST["iFatContent"]."',iType ='".$_POST["iType"]."' WHERE iIdentifier='".$_POST["iIdentifier"]."';";
+                    $sql = "UPDATE itemInfo SET iWeight=".$_POST["iWeight"].",iFatContent='".$_POST["iFatContent"]."',iType ='".$_POST["iType"]."' WHERE iIdentifier='".$_POST["iIdentifier"]."';";
                     $res=mysqli_query($mysqli,$sql);
                     if($res==TRUE){
                         $sql = "SELECT * from ItemInfo where iIdentifier = '".$_POST["iIdentifier"]."';";

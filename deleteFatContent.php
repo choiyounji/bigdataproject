@@ -10,7 +10,7 @@
     <header>
         <a href="select.html">← HOME</a>
     </header>
-    <div class="title">Result of DELETE Item </div>
+    <div class="title">Result of DELETE Fat Content </div>
 
 
     <table>
@@ -25,7 +25,9 @@
                 printf("Connect failed: %s\n", mysqli_error($mysqli));
                 exit();
             } else {
-                $sql = "SELECT * FROM itemInfo WHERE iWeight=" . $_POST['iWeight'] . ";";
+              
+
+                $sql = "SELECT * FROM itemInfo WHERE iFatContent='" . $_POST['iFatContent'] . "';";
                 $ret = mysqli_query($mysqli, $sql);
                 $exist = mysqli_num_rows($ret);
                 if ($exist <= 0) {
@@ -40,15 +42,23 @@
                         echo "<tr><td>" . $iIdentifier . "</td><td>" . $iWeight . "</td> <td>" . $iFatContent . "</td> <td>" . $iType . "</td></tr>";
                     }
                     echo "<tr><td>.</td><td>.</td><td>.</td><td>.</td></tr></table></br><div class='show'> Before</div>
-    <table>
+        <table>
         <th>iIdentifier</th>
         <th>iWeight</th>
         <th>iFatContent</th>
         <th>iType</th>";
-                    $sql = "DELETE FROM itemInfo  WHERE iWeight=" . $_POST['iWeight'] . ";";
+        mysqli_begin_transaction($mysqli);
+        try{
+            mysqli_query($mysqli, "DELETE FROM itemInfo  WHERE iFatContent='" . $_POST['iFatContent'] . "'");
+            mysqli_query($mysqli, "DELETE FROM fatSales  WHERE iFatContent='" . $_POST['iFatContent'] . "'");
+            mysqli_commit($mysqli);}
+            catch(mysqli_sql_exception $exception){
+                mysqli_rollback($mysqli);
+
+            }
                     $res = mysqli_query($mysqli, $sql);
                     if ($res == TRUE) {
-                        $sql = "SELECT * from ItemInfo WHERE iWeight=" . $_POST['iWeight'] . ";";
+                        $sql = "SELECT * from ItemInfo WHERE iFatContent='" . $_POST['iFatContent'] . "';";
                         $res = mysqli_query($mysqli, $sql);
                         if ($res) {
                             $exist = mysqli_num_rows($res);

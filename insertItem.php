@@ -29,7 +29,7 @@
                 }
                 else{
                     $sql = "SELECT iIdentifier FROM itemInfo WHERE iIdentifier='".$_POST['iIdentifier']."';";
-$ret = mysqli_query($mysqli, $sql);
+                    $ret = mysqli_query($mysqli, $sql);
 $exist = mysqli_num_rows($ret);
 if($exist>0){
    echo "<tr><td></td><td> iIdentifier is duplicated. </td></tr>";
