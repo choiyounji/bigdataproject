@@ -8,7 +8,7 @@
     <header>
       <a href="select.html">← HOME</a>
     </header>
-        <div class="title">Insert Outlet Result </div>
+        <div class="title">Result of Update Outlet </div>
         <table>
             <th>oIdentifier</th>
             <th>oEstablishmentYear</th>
