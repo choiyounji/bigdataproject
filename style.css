@@ -120,7 +120,8 @@ p{
     
 }
 
-a:link {
+a {
+    text-decoration: none;
     color: #FF8F3D;
   }
   a:hover {
