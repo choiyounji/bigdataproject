@@ -17,10 +17,10 @@
         <div class="insert">
             <div class = "inputs">
                 <div class="title2">
-                    Insert Item
+                    UPDATE Item
                 </div>
                
-    <form action="insertItem.php" method="POST">
+    <form action="updateItem.php" method="POST">
         <p>Identifier </br><input type="text" name="iIdentifier" > 
         <p>Weight</br> <input type="number" name="iWeight" step=0.00001 > </p>
         <p>Fat Content</br> <select name="iFatContent">
@@ -52,9 +52,9 @@
 </div>
 <div class = "inputs">
     <div class="title2">
-        Insert Outlet
+        UPDATE Outlet
         </div>
-<form action="insertOutlet.php" method="POST">
+<form action="updateOutlet.php" method="POST">
     <p>Identifier </br><input type="text" name="oIdentifier" > 
     <p>Establishment Year</br> <input type="number" name="oEstablishmentYear" step=0.00001 > </p>
     <p>Outlet Size</br> <select name="oSize">
@@ -79,9 +79,9 @@
 </div>
 <div class = "inputs">
     <div class="title2">
-        Insert Item Sales
+        UPDATE Item Sales
         </div>
-        <form action="insertItemSales.php" method="POST">
+        <form action="updateItemSales.php" method="POST">
             <p>Item Identifier </br><input type="text" name="iIdentifier" >
             <p>Weight</br> <input type="number" name="iWeight" step=0.00001 > </p>
             <p>Fat Content</br> <select name="iFatContent">
@@ -130,6 +130,5 @@
             <p><input type="submit" name="submit" value="INSERT Item Sales"></p>
         </form>  
 </div>
-
 </body>
 </html>
