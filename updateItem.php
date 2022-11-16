@@ -6,7 +6,7 @@
     </head>
     <body>
     <header>
-        <a href="select.html">
+        <a href="select.php">
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" width="30px" height="30px" ViewBox="0 0 512 512">
                 <path d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
                 <path d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
@@ -78,6 +78,38 @@
                                     $iFatContent=$newArray['iFatContent'];
                                     $iType=$newArray['iType'];
                                     echo "<tr><td>".$iIdentifier."</td><td>".$iWeight."</td> <td>".$iFatContent."</td> <td>".$iType."</td></tr>";
+                                }
+
+                                $update_fatSales_sql = "UPDATE fatSales 
+                                                        SET iFatContent='".$_POST["iFatContent"]."'
+                                                        WHERE iIdentifier='".$_POST["iIdentifier"]."';";
+                                $update_fatSales_res = mysqli_query($mysqli, $update_fatSales_sql);
+                                if(!$update_fatSales_res){
+                                    printf("Could not update fatSales : %s\n", mysqli_error($mysqli));
+                                }
+
+                                $update_typeSales_sql = "UPDATE typeSales 
+                                                        SET iType='".$_POST["iType"]."'
+                                                        WHERE iIdentifier='".$_POST["iIdentifier"]."';";
+                                $update_visibilitySales_res= mysqli_query($mysqli, $update_typeSales_sql);
+                                if(!$update_visibilitySales_res){
+                                    printf("Could not update typeSales : %s\n", mysqli_error($mysqli));
+                                }
+
+                                $update_typeMrpSales_sql = "UPDATE typeMrpSales 
+                                                            SET iType='".$_POST["iType"]."'
+                                                            WHERE iIdentifier='".$_POST["iIdentifier"]."';";
+                                $update_typeMrpSales_res= mysqli_query($mysqli, $update_typeMrpSales_sql);
+                                if(!$update_typeMrpSales_res){
+                                    printf("Could not update typeMrpSales : %s\n", mysqli_error($mysqli));
+                                }
+
+                                $update_typeFatSales_sql = "UPDATE typeFatSales 
+                                                        SET iType='".$_POST["iType"]."', iFatContent='".$_POST["iFatContent"]."'
+                                                        WHERE iIdentifier='".$_POST["iIdentifier"]."';";
+                                $update_typeFatSales_res = mysqli_query($mysqli, $update_typeFatSales_sql);
+                                if(!$update_typeFatSales_res){
+                                    printf("Could not update typeFatSales : %s\n", mysqli_error($mysqli));
                                 }
                             }
                             else{
