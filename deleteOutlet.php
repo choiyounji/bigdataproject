@@ -27,12 +27,12 @@
     <div class="tableContainer">
     <h2 class="tableHeader">Before</h2>
     <table>
-    <th>oIdentifier</th>
-            <th>oEstablishmentYear</th>
-            <th>oSize</th>
-            <th>oLocationType</th>
-            <th>oType</th>
-            <th>oYearsEstablished</th>
+        <th>oIdentifier</th>
+        <th>oEstablishmentYear</th>
+        <th>oSize</th>
+        <th>oLocationType</th>
+        <th>oType</th>
+        <th>oYearsEstablished</th>
         <?php
             header('Content-Type: text/html; charset=UTF-8');
             $mysqli = mysqli_connect("localhost", "team21", "team21", "team21");
@@ -60,15 +60,15 @@
             }
             mysqli_free_result($ret);
             ?>
-                    <div class='show'> Before</div>
-                    <h2 class='tableHeader'>After</h2>
-                    <table>
-                    <th>oIdentifier</th>
-                    <th>oEstablishmentYear</th>
-                    <th>oSize</th>
-                    <th>oLocationType</th>
-                    <th>oType</th>
-                    <th>oYearsEstablished</th>
+        </table>
+        <h2 class='tableHeader'>After</h2>
+        <table>
+            <th>oIdentifier</th>
+            <th>oEstablishmentYear</th>
+            <th>oSize</th>
+            <th>oLocationType</th>
+            <th>oType</th>
+            <th>oYearsEstablished</th>
                   <?php  $sql = "DELETE FROM outlet WHERE oIdentifier='".$_POST["oIdentifier"]."';";
                     $res = mysqli_query($mysqli, $sql);
                     if ($res == TRUE) {
@@ -89,8 +89,6 @@
                     
                     mysqli_free_result($res);
                     mysqli_close($mysqli);
-
-                
             
             ?>
     </table>
