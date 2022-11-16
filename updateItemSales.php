@@ -73,34 +73,42 @@
                 <th>iVisibility</th>
                 <th>iMrp</th>
                 <?php
-                    $update_sql = "UPDATE itemSales 
-                                    SET iOutletSales=".$_POST["iOutletSales"].", iVisibility=".$_POST["iVisibility"].", iMrp=".$_POST["iMrp"]." 
-                                    WHERE iIdentifier='".$_POST["iIdentifier"]."'AND oIdentifier='".$_POST['oIdentifier']."';";
-                    $update_res=mysqli_query($mysqli,$update_sql);
-                    if($update_res){
-                        $after_sql =  "SELECT * FROM itemSales WHERE iIdentifier='".$_POST['iIdentifier']."' AND oIdentifier='".$_POST['oIdentifier']."';";
-                        $after_res = mysqli_query($mysqli, $after_sql);
-                        if($after_res){
-                            while($newArray=mysqli_fetch_array($after_res, MYSQLI_ASSOC)){
-                            $iIdentifier=$newArray['iIdentifier'];
-                            $oIdentifier=$newArray['oIdentifier'];
-                            $iOutletSales=$newArray['iOutletSales'];
-                            $iVisibility=$newArray['iVisibility'];
-                            $iMrp=$newArray['iMrp'];
-                            echo "<tr><td>".$iIdentifier."</td><td>".$oIdentifier."</td> <td>".$iOutletSales."</td> <td>".$iVisibility."</td><td>".$iMrp."</td> </tr>";
-                            }
-                        }
-                        else{
-                            printf("Could not retrieve records : %s\n", mysqli_error($mysqli));
-                        }
-                
+                    header('Content-Type: text/html; charset=UTF-8');
+                    $mysqli=mysqli_connect("localhost","team21","team21","team21");
+                    if(mysqli_connect_errno()){
+                        printf("Connect failed: %s\n", mysqli_error($mysqli));
+                        exit();
                     }
                     else{
-                        printf("Could not update record : %s\n", mysqli_error($mysqli));
+                        $update_sql = "UPDATE itemSales 
+                                        SET iOutletSales=".$_POST["iOutletSales"].", iVisibility=".$_POST["iVisibility"].", iMrp=".$_POST["iMrp"]." 
+                                        WHERE iIdentifier='".$_POST["iIdentifier"]."'AND oIdentifier='".$_POST['oIdentifier']."';";
+                        $update_res=mysqli_query($mysqli,$update_sql);
+                        if($update_res){
+                            $after_sql =  "SELECT * FROM itemSales WHERE iIdentifier='".$_POST['iIdentifier']."' AND oIdentifier='".$_POST['oIdentifier']."';";
+                            $after_res = mysqli_query($mysqli, $after_sql);
+                            if($after_res){
+                                while($newArray=mysqli_fetch_array($after_res, MYSQLI_ASSOC)){
+                                $iIdentifier=$newArray['iIdentifier'];
+                                $oIdentifier=$newArray['oIdentifier'];
+                                $iOutletSales=$newArray['iOutletSales'];
+                                $iVisibility=$newArray['iVisibility'];
+                                $iMrp=$newArray['iMrp'];
+                                echo "<tr><td>".$iIdentifier."</td><td>".$oIdentifier."</td> <td>".$iOutletSales."</td> <td>".$iVisibility."</td><td>".$iMrp."</td> </tr>";
+                                }
+                            }
+                            else{
+                                printf("Could not retrieve records : %s\n", mysqli_error($mysqli));
+                            }
+                    
+                        }
+                        else{
+                            printf("Could not update record : %s\n", mysqli_error($mysqli));
+                        }
+                        mysqli_free_result($update_res);
+                        mysqli_free_result($after_res);
+                        mysqli_close($mysqli);
                     }
-                    mysqli_free_result($update_res);
-                    mysqli_free_result($after_res);
-                    mysqli_close($mysqli);
                 ?>
             </table>
         </div>
