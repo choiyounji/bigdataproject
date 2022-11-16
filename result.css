@@ -32,8 +32,13 @@ table{
         width: 65%;
         border-radius: 16px;
         background-color: white;
+        padding:5%
       
     }
+
+.tables{
+  margin-bottom: 10%;
+}
     th{
         color:#2E3190;
         
