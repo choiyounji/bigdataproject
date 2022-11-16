@@ -24,6 +24,8 @@
         </a>
     </header>
     <div class="title">Result of DELETE Item </div>
+    <div class="tableContainer">
+    <h2 class="tableHeader">Before</h2>
     <table>
         <th>iIdentifier</th>
         <th>iWeight</th>
@@ -48,16 +50,20 @@
                         $iWeight = $newArray['iWeight'];
                         $iFatContent = $newArray['iFatContent'];
                         $iType = $newArray['iType'];
-                        echo "<tr><td>" . $iIdentifier . "</td><td>" . $iWeight . "</td> <td>" . $iFatContent . "</td> <td>" . $iType . "</td></tr>
-                        <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr></table></br> ";
+                        echo "<tr><td>" . $iIdentifier . "</td><td>" . $iWeight . "</td> <td>" . $iFatContent . "</td> <td>" . $iType . "</td></tr>";
                     }
-                    echo "<div class='show'> Before</div>
+                }
+               } 
+               mysqli_free_result($ret);
+               ?> 
+              
     <table>
+    <h2 class='tableHeader'>After</h2>
         <th>iIdentifier</th>
         <th>iWeight</th>
         <th>iFatContent</th>
-        <th>iType</th>";
-                    $sql = "DELETE FROM itemInfo WHERE iIdentifier='" . $_POST["iIdentifier"] . "';";
+        <th>iType</th>
+          <?php          $sql = "DELETE FROM itemInfo WHERE iIdentifier='" . $_POST["iIdentifier"] . "';";
                     $res = mysqli_query($mysqli, $sql);
                     if ($res == TRUE) {
                         $sql = "SELECT * from ItemInfo where iIdentifier = '" . $_POST["iIdentifier"] . "';";
@@ -74,15 +80,13 @@
                     } else {
                         printf("Could not delete record : %s\n", mysqli_error($mysqli));
                     }
-                    mysqli_free_result($ret);
+                 
                     mysqli_free_result($res);
                     mysqli_close($mysqli);
 
-                }
-            }
             ?>
-    </table></br></br>
-    <div class="show">After</div>
+    </table>
+    </div>
 
 
 </body>
