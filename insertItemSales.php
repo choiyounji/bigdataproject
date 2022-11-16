@@ -37,9 +37,14 @@
                     }
                     else{
                         $sql = "SELECT * FROM itemSales WHERE iIdentifier='".$_POST['iIdentifier']."' AND oIdentifier='".$_POST['oIdentifier']."';";
+                        $sql_itemInfo = "SELECT * FROM itemInfo WHERE iIdentifier='".$_POST['iIdentifier']."';";
+                        $sql_outlet = "SELECT * FROM outlet WHERE oIdentifier='".$_POST['oIdentifier']."';";
                         $res = mysqli_query($mysqli, $sql);
+                        $res_itemInfo = mysqli_query($mysqli, $sql_itemInfo);
+                        $res_outlet = mysqli_query($mysqli, $sql_outlet);
+
                         $exist = mysqli_num_rows($res);
-                        if($exist>0){
+                        if($exist>0 || mysqli_num_rows($res_itemInfo) > 0 || mysqli_num_rows($res_outlet) > 0 ){
                             echo "<tr><td></td><td> duplicated. </td></tr>";
                             exit(0);
                         }
@@ -47,8 +52,8 @@
                         try{
                             mysqli_query($mysqli, "INSERT into itemInfo (iIdentifier,iWeight,iFatContent,iType) values ('".$_POST["iIdentifier"]."',".$_POST["iWeight"].",'".$_POST["iFatContent"]."','".$_POST["iType"]."');");
                             $YearsEstablished = 2022-$_POST["oEstablishmentYear"];
-                            mysqli_query($mysqli, "INSERT into outlet (oIdentifier,oEstablishmentYear,oSize,oLocationType,oType,oYearsEstablished) values ('".$_POST["oIdentifier"]."','".$_POST["oEstablishmentYear"]."','".$_POST["oSize"]."','".$_POST["oLocationType"]."','".$_POST["oType"]."','".$YearsEstablished."');");
-                            mysqli_query($mysqli, "INSERT into itemSales (iIdentifier,oIdentifier,iOutletSales,iVisibility,iMrp) values ('".$_POST["iIdentifier"]."','".$_POST["oIdentifier"]."','".$_POST["iOutletSales"]."',".$_POST["iVisibility"].",".$_POST["iMrp"].");");
+                            mysqli_query($mysqli, "INSERT into outlet (oIdentifier,oEstablishmentYear,oSize,oLocationType,oType,oYearsEstablished) values ('".$_POST["oIdentifier"]."',".$_POST["oEstablishmentYear"].",'".$_POST["oSize"]."','".$_POST["oLocationType"]."','".$_POST["oType"]."',".$YearsEstablished.");");
+                            mysqli_query($mysqli, "INSERT into itemSales (iIdentifier,oIdentifier,iOutletSales,iVisibility,iMrp) values ('".$_POST["iIdentifier"]."','".$_POST["oIdentifier"]."',".$_POST["iOutletSales"].", ".$_POST["iVisibility"].", ".$_POST["iMrp"].");");
                             mysqli_commit($mysqli);
                             printf("commit done");
             
@@ -71,6 +76,8 @@
                                 }
                             
                             }  catch(mysqli_sql_exception $exception){
+                                echo mysqli_error($mysqli);
+
                                 mysqli_rollback($mysqli);
                                 echo "<tr><td></td><td> Syntax ERROR </td></tr>";
                              
