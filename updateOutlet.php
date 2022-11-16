@@ -14,7 +14,7 @@
             HOME
         </a>
     </header>
-        <div class="title">Result of Update Outlet </div>
+        <div class="title">Insert Outlet Result </div>
         <table>
             <th>oIdentifier</th>
             <th>oEstablishmentYear</th>

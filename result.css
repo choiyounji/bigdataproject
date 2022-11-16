@@ -20,10 +20,6 @@ body {
   color: rgb(84, 84, 84);
   fill: rgb(84, 84, 84);
 }
-.ionicon:visited {
-  color: rgb(143, 0, 71);
-  fill: rgb(143, 0, 71);
-}
 
 .show {
   font-size: 20px;
@@ -41,9 +37,6 @@ a:hover {
 }
 a:active {
   color: rgb(84, 84, 84);
-}
-a:visited {
-  color: rgb(143, 0, 71);
 }
 
 table {
