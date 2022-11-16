@@ -115,7 +115,7 @@ p{
     
 }
 .inputs{
-    width:30%;
+    width:20%;
     display:table-cell;
     
 }
@@ -132,10 +132,6 @@ p{
     color: rgb(84, 84, 84);
     fill: rgb(84, 84, 84);
   }
-  .ionicon:visited {
-    color: rgb(143, 0, 71);
-    fill: rgb(143, 0, 71);
-  }
 
 a:link {
     text-decoration: none;
@@ -148,6 +144,4 @@ a:hover {
 a:active {
     color: rgb(84, 84, 84);
 }
-a:visited {
-    color: rgb(143, 0, 71);
-}
+
