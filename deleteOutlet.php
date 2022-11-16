@@ -24,6 +24,8 @@
         </a>
     </header>
     <div class="title">Result of DELETE Outlet </div>
+    <div class="tableContainer">
+    <h2 class="tableHeader">Before</h2>
     <table>
     <th>oIdentifier</th>
             <th>oEstablishmentYear</th>
@@ -52,20 +54,22 @@
                         $oLocationType=$newArray['oLocationType'];
                         $oType=$newArray['oType'];
                         $YearsEstablished = 2022-$oEstablishmentYear;
-
-                       
-                        echo "<tr><td>".$oIdentifier."</td><td>".$oEstablishmentYear."</td> <td>".$oSize."</td> <td>".$oLocationType."</td><td>".$oType."</td><td>".$YearsEstablished."</td></tr>
-                        <tr><td>.</td><td>.</td> <td>.</td> <td>.</td><td>.</td><td>.</td></tr></table></br>";
+                        echo "<tr><td>".$oIdentifier."</td><td>".$oEstablishmentYear."</td> <td>".$oSize."</td> <td>".$oLocationType."</td><td>".$oType."</td><td>".$YearsEstablished."</td></tr>";
                     }
-                    echo "<div class='show'> Before</div>
+                }
+            }
+            mysqli_free_result($ret);
+            ?>
+                    <div class='show'> Before</div>
+                    <h2 class='tableHeader'>After</h2>
                     <table>
                     <th>oIdentifier</th>
                     <th>oEstablishmentYear</th>
                     <th>oSize</th>
                     <th>oLocationType</th>
                     <th>oType</th>
-                    <th>oYearsEstablished</th>";
-                    $sql = "DELETE FROM outlet WHERE oIdentifier='".$_POST["oIdentifier"]."';";
+                    <th>oYearsEstablished</th>
+                  <?php  $sql = "DELETE FROM outlet WHERE oIdentifier='".$_POST["oIdentifier"]."';";
                     $res = mysqli_query($mysqli, $sql);
                     if ($res == TRUE) {
                         $sql = "SELECT * from outlet where oIdentifier = '".$_POST["oIdentifier"]."';";
@@ -82,15 +86,15 @@
                     } else {
                         printf("Could not delete record : %s\n", mysqli_error($mysqli));
                     }
-                    mysqli_free_result($ret);
+                    
                     mysqli_free_result($res);
                     mysqli_close($mysqli);
 
-                }
-            }
+                
+            
             ?>
-    </table></br></br>
-    <div class="show">After</div>
+    </table>
+</div>
 
 
 </body>

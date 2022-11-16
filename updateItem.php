@@ -54,7 +54,7 @@
                         } 
                     }
                     mysqli_free_result($before_res);
-                    mysqli_close($mysqli);
+                   
                 ?>
             </table>
             <h2 class='tableHeader'>After</h2>
@@ -64,13 +64,6 @@
                 <th>iFatContent</th>
                 <th>iType</th>
                 <?php
-                    header('Content-Type: text/html; charset=UTF-8');
-                    $mysqli=mysqli_connect("localhost","team21","team21","team21");
-                    if(mysqli_connect_errno()){
-                        printf("Connect failed: %s\n", mysqli_error($mysqli));
-                        exit();
-                    }
-                    else{
                         $update_sql = "UPDATE itemInfo 
                                         SET iWeight=".$_POST["iWeight"].",iFatContent='".$_POST["iFatContent"]."',iType ='".$_POST["iType"]."' 
                                         WHERE iIdentifier='".$_POST["iIdentifier"]."';";
@@ -126,10 +119,10 @@
                         else{
                             printf("Could not update record : %s\n", mysqli_error($mysqli));
                         }
-                        mysqli_free_result($update_res);
+                        
                         mysqli_free_result($after_res);
                         mysqli_close($mysqli);
-                    }
+                    
                 ?>
             </table>
         </div>

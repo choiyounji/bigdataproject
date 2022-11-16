@@ -24,7 +24,8 @@
         </a>
     </header>
     <div class="title">Result of DELETE Item Sales </div>
-
+    <div class="tableContainer">
+            <h2 class="tableHeader">Before</h2>
 
     <table>
             <th>iIdentifier</th>
@@ -53,9 +54,9 @@
                         $iVisibility = $newArray['iVisibility'];
                         $iMRP = $newArray['iMrp'];
                         echo "<tr><td>".$iIdentifier."</td><td>".$oIdentifier."</td><td>".$iOutletSales."</td> <td>".$iVisibility."</td> <td>".$iMRP."</td></tr>
-                        <tr><td>.</td> <td>.</td> <td>.</td><td>.</td><td>.</td></tr></table></br>";
+                        </table></br>";
                     }
-                    echo "<div class='show'> Before</div>
+                    echo "
                     <table>
                     <th>iIdentifier</th>
                     <th>oIdentifier</th>
@@ -86,9 +87,8 @@
                 }
             }
             ?>
-    </table></br></br>
-    <div class="show">After</div>
-
+    </table>
+    </div>
 
 </body>
 
