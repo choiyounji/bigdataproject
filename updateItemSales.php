@@ -32,7 +32,7 @@
                 BACK
             </a>
         </header>
-        <div class="title">Result of Update Item </div>
+        <div class="title">Result of Update Item Sales</div>
 
         <div class="tableContainer">
             <h2 class="tableHeader">Before</h2>
