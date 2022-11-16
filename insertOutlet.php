@@ -47,11 +47,11 @@
                     }
                     $YearsEstablished = 2022-$_POST["oEstablishmentYear"];
                     $sql = "INSERT into outlet (oIdentifier,
-                   oEstablishmentYear,
+                    oEstablishmentYear,
                     oSize,
                     oLocationType,
-                   oType,
-                    oYearsEstablished) values ('".$_POST["oIdentifier"]."','".$_POST["oEstablishmentYear"]."','".$_POST["oSize"]."','".$_POST["oLocationType"]."','".$_POST["oType"]."','".$YearsEstablished."');";
+                    oType,
+                    oYearsEstablished) values ('".$_POST["oIdentifier"]."',".$_POST["oEstablishmentYear"].",'".$_POST["oSize"]."','".$_POST["oLocationType"]."','".$_POST["oType"]."',".$YearsEstablished.");";
                     $res=mysqli_query($mysqli,$sql);
                     if($res==TRUE){
                         $sql = "SELECT * from outlet where oIdentifier = '".$_POST["oIdentifier"]."';";
