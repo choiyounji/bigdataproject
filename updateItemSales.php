@@ -42,7 +42,7 @@
                         $before_res = mysqli_query($mysqli, $before_sql);
                         $exist = mysqli_num_rows($before_res);
                         if($exist<=0){
-                            echo "<tr><td></td><td> The iIdentifier you entered does not exist. </td></tr>";
+                            echo "<tr><td></td><td> The item sales you entered does not exist. </td></tr>";
                             exit(0);
                         }
                         else{
