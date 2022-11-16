@@ -7,12 +7,7 @@
 </head>
 
 <body>
-    <header>
-        <a href="select.html">← HOME</a>
-    </header>
     <div class="title">Result of DELETE Item </div>
-
-
     <table>
         <th>iIdentifier</th>
         <th>iWeight</th>
