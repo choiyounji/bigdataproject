@@ -70,10 +70,10 @@
                                     printf("Could not retrieve records : %s\n", mysqli_error($mysqli));
                                 }
                             
-                            }      catch(mysqli_sql_exception $exception){
+                            }  catch(mysqli_sql_exception $exception){
                                 mysqli_rollback($mysqli);
-                                printf("rollback done");
-                                throw $exception;
+                                echo "<tr><td></td><td> Syntax ERROR </td></tr>";
+                             
                             }
         
                   

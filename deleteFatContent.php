@@ -24,6 +24,8 @@
         </a>
     </header>
     <div class="title">Result of DELETE Weight </div>
+    <div class="tableContainer">
+    <h2 class="tableHeader">Before</h2>
     <table>
         <th>iIdentifier</th>
         <th>iWeight</th>
@@ -36,7 +38,9 @@
                 printf("Connect failed: %s\n", mysqli_error($mysqli));
                 exit();
             } else {
-                $sql = "SELECT * FROM itemInfo WHERE iWeight=" . $_POST['iWeight'] . ";";
+              
+
+                $sql = "SELECT * FROM itemInfo WHERE iFatContent='" . $_POST['iFatContent'] . "';";
                 $ret = mysqli_query($mysqli, $sql);
                 $exist = mysqli_num_rows($ret);
                 if ($exist <= 0) {
@@ -50,39 +54,48 @@
                         $iType = $newArray['iType'];
                         echo "<tr><td>" . $iIdentifier . "</td><td>" . $iWeight . "</td> <td>" . $iFatContent . "</td> <td>" . $iType . "</td></tr>";
                     }
-                    echo "<tr><td>.</td><td>.</td><td>.</td><td>.</td></tr></table></br><div class='show'> Before</div>
-    <table>
+                }
+            }
+            mysqli_free_result($ret);
+            ?>
+                    
+        
+        
+                   
+                   <table>
+                   <h2 class='tableHeader'>After</h2>
         <th>iIdentifier</th>
         <th>iWeight</th>
         <th>iFatContent</th>
-        <th>iType</th>";
-                    $sql = "DELETE FROM itemInfo  WHERE iWeight=" . $_POST['iWeight'] . ";";
-                    $res = mysqli_query($mysqli, $sql);
-                    if ($res == TRUE) {
-                        $sql = "SELECT * from ItemInfo WHERE iWeight=" . $_POST['iWeight'] . ";";
-                        $res = mysqli_query($mysqli, $sql);
-                        if ($res) {
-                            $exist = mysqli_num_rows($res);
-                            if ($exist <= 0) {
-                                echo "<tr><td></td><td>deleted</td><td> </td></tr>";
-                            }
-                        } else {
-                            printf("Could not retrieve records : %s\n", mysqli_error($mysqli));
-                        }
+        <th>iType</th>
+       <?php mysqli_begin_transaction($mysqli);
+        try{
+            mysqli_query($mysqli, "DELETE FROM itemInfo  WHERE iFatContent='" . $_POST['iFatContent'] . "'");
+            mysqli_query($mysqli, "DELETE FROM fatSales  WHERE iFatContent='" . $_POST['iFatContent'] . "'");
+            mysqli_commit($mysqli);
+            $sql = "SELECT * from ItemInfo WHERE iFatContent='" . $_POST['iFatContent'] . "';";
+            $res = mysqli_query($mysqli, $sql);
+            if ($res) {
+                $exist = mysqli_num_rows($res);
+                if ($exist <= 0) {
+                    echo "<tr><td></td><td>deleted</td><td> </td></tr>";
+                }
+            } else {
+                printf("Could not retrieve records : %s\n", mysqli_error($mysqli));
+            }
+            mysqli_free_result($res);}
+            catch(mysqli_sql_exception $exception){
+                mysqli_rollback($mysqli);
+                echo "<tr><td></td><td> Roll Back </td></tr>";
 
-                    } else {
-                        printf("Could not delete record : %s\n", mysqli_error($mysqli));
-                    }
-                    mysqli_free_result($ret);
-                    mysqli_free_result($res);
+            }
+                       
                     mysqli_close($mysqli);
 
-                }
-            }
+                
             ?>
-    </table></br></br>
-    <div class="show">After</div>
-
+    </table>
+ </div>
 
 </body>
 
