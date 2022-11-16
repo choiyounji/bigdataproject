@@ -78,7 +78,6 @@
                             }  catch(mysqli_sql_exception $exception){
                                 mysqli_rollback($mysqli);
                                 echo "<tr><td></td><td> Syntax ERROR </td></tr>";
-                             
                             }
         
                   
