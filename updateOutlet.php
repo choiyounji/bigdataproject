@@ -53,7 +53,7 @@
                                 $oSize=$newArray['oSize'];
                                 $oLocationType=$newArray['oLocationType'];
                                 $oType=$newArray['oType'];
-                                $YearsEstablished = 2022-$_POST["oEstablishmentYear"];
+                                $YearsEstablished = $newArray["oEstablishmentYear"];
                                 echo "<tr><td>".$oIdentifier."</td><td>".$oEstablishmentYear."</td> <td>".$oSize."</td> <td>".$oLocationType."</td><td>".$oType."</td><td>".$YearsEstablished."</td></tr>";
                             }
                         }
@@ -96,7 +96,7 @@
                                 }
 
                                 $update_outletSizeSales_sql = "UPDATE outletSizeSales 
-                                                                SET oSize=".$_POST["oSize"]."
+                                                                SET oSize='".$_POST["oSize"]."'
                                                                 WHERE oIdentifier='".$_POST['oIdentifier']."';";
                                 $update_outletSizeSales_res= mysqli_query($mysqli, $update_outletSizeSales_sql);
                                 if(!$update_outletSizeSales_res){
@@ -104,7 +104,7 @@
                                 }
                                 
                                 $update_locationTypeSales_sql = "UPDATE locationTypeSales 
-                                                                SET oLocationType=".$_POST["oLocationType"]."
+                                                                SET oLocationType='".$_POST["oLocationType"]."'
                                                                 WHERE oIdentifier='".$_POST['oIdentifier']."';";
                                 $update_locationTypeSales_res= mysqli_query($mysqli, $update_locationTypeSales_sql);
                                 if(!$update_locationTypeSales_res){
@@ -121,7 +121,7 @@
                                 }
 
                                 $update_outletTypeLocationSales_sql = "UPDATE outletTypeLocationSales 
-                                                                        SET oLocationType=".$_POST["oLocationType"].", oType=".$_POST["oType"]."
+                                                                        SET oLocationType='".$_POST["oLocationType"]."', oType='".$_POST["oType"]."'
                                                                         WHERE oIdentifier='".$_POST['oIdentifier']."';";
                                 $update_outletTypeLocationSales_res = mysqli_query($mysqli, $update_outletTypeLocationSales_sql);
                                 if(!$update_outletTypeLocationSales_res){
