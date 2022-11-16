@@ -134,3 +134,12 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -11px;
 }
+
+.tableHeader {
+  margin: 0.5% 2.1% 0%;
+}
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  align: left;
+}
