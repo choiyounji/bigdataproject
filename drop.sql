@@ -1,0 +1,12 @@
+drop table fatSales;
+drop table visibilitySales;
+drop table typeSales;
+drop table typeMrpSales;
+drop table outletSizeSales;
+drop table locationTypeSales;
+drop table yearsEstablishedSales;
+drop table typeFatSales;
+drop table outletTypeLocationSales;
+drop table itemSales;
+drop table itemInfo;
+drop table outlet;
