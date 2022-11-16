@@ -53,7 +53,7 @@
                                 $oSize=$newArray['oSize'];
                                 $oLocationType=$newArray['oLocationType'];
                                 $oType=$newArray['oType'];
-                                $YearsEstablished = $newArray["oEstablishmentYear"];
+                                $YearsEstablished = $newArray["oYearsEstablished"];
                                 echo "<tr><td>".$oIdentifier."</td><td>".$oEstablishmentYear."</td> <td>".$oSize."</td> <td>".$oLocationType."</td><td>".$oType."</td><td>".$YearsEstablished."</td></tr>";
                             }
                         }
@@ -92,6 +92,7 @@
                                     $oSize=$newArray['oSize'];
                                     $oLocationType=$newArray['oLocationType'];
                                     $oType=$newArray['oType'];
+                                    $oYearsEstablished = 2022-$_POST["oEstablishmentYear"];
                                     echo "<tr><td>".$oIdentifier."</td><td>".$oEstablishmentYear."</td> <td>".$oSize."</td> <td>".$oLocationType."</td><td>".$oType."</td><td>".$YearsEstablished."</td></tr>";
                                 }
 
@@ -111,9 +112,9 @@
                                     printf("Could not update locationTypeSales : %s\n", mysqli_error($mysqli));
                                 }
 
-                                $oEstablishmentYear = 2022-$_POST["oYearsEstablished"];
+                                $oYearsEstablished = 2022-$_POST["oEstablishmentYear"];
                                 $update_yearsEstablishedSales_sql = "UPDATE yearsEstablishedSales 
-                                                                    SET oYearsEstablished=".$_POST["oYearsEstablished"].", oEstablishmentYear=".$_POST["oEstablishmentYear"]."
+                                                                    SET oYearsEstablished=".$oYearsEstablished."
                                                                     WHERE oIdentifier='".$_POST['oIdentifier']."';";
                                 $update_yearsEstablishedSales_res= mysqli_query($mysqli, $update_yearsEstablishedSales_sql);
                                 if(!$update_yearsEstablishedSales_res){

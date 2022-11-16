@@ -42,7 +42,7 @@ if($exist>0){
    echo "<tr><td></td><td> iIdentifier is duplicated. </td></tr>";
   exit(0);
 }
-                    $sql = "INSERT into itemInfo (iIdentifier,iWeight,iFatContent,iType) values ('".$_POST["iIdentifier"]."','".$_POST["iWeight"]."','".$_POST["iFatContent"]."','".$_POST["iType"]."');";
+                    $sql = "INSERT into itemInfo (iIdentifier,iWeight,iFatContent,iType) values ('".$_POST["iIdentifier"]."',".$_POST["iWeight"].",'".$_POST["iFatContent"]."','".$_POST["iType"]."');";
                     $res=mysqli_query($mysqli,$sql);
                     if($res==TRUE){
                         $sql = "SELECT * from ItemInfo where iIdentifier = '".$_POST["iIdentifier"]."';";
