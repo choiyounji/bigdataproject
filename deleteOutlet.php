@@ -60,9 +60,10 @@
             }
             mysqli_free_result($ret);
             ?>
-                    <div class='show'> Before</div>
-                    <h2 class='tableHeader'>After</h2>
+                    
+                
                     <table>
+                    <h2 class='tableHeader'>After</h2>
                     <th>oIdentifier</th>
                     <th>oEstablishmentYear</th>
                     <th>oSize</th>

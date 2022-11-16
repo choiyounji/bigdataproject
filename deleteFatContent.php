@@ -23,7 +23,7 @@
             BACK
         </a>
     </header>
-    <div class="title">Result of DELETE Weight </div>
+    <div class="title">Result of DELETE Fat Content </div>
     <div class="tableContainer">
     <h2 class="tableHeader">Before</h2>
     <table>

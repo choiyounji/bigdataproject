@@ -53,7 +53,7 @@
                                 $oSize=$newArray['oSize'];
                                 $oLocationType=$newArray['oLocationType'];
                                 $oType=$newArray['oType'];
-                                $YearsEstablished = 2022-$_POST["oEstablishmentYear"];
+                                $YearsEstablished = $newArray["oEstablishmentYear"];
                                 echo "<tr><td>".$oIdentifier."</td><td>".$oEstablishmentYear."</td> <td>".$oSize."</td> <td>".$oLocationType."</td><td>".$oType."</td><td>".$YearsEstablished."</td></tr>";
                             }
                         }
