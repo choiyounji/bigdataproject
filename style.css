@@ -120,12 +120,30 @@ p{
     
 }
 
-a {
+.ionicon{
+    fill: #FF8F3D;
+    color: #FF8F3D;
+  }
+  .ionicon:hover{
+    fill: #ff4406;
+    color: #ff4406;
+  }
+  .ionicon:active {
+    color: rgb(84, 84, 84);
+    fill: rgb(84, 84, 84);
+  }
+  .ionicon:visited {
+    color: rgb(143, 0, 71);
+    fill: rgb(143, 0, 71);
+  }
+
+a:link {
     text-decoration: none;
     color: #FF8F3D;
+    margin: 1%;
 }
 a:hover {
-    color: rgb(255, 68, 6);
+    color: #ff4406;
 }
 a:active {
     color: rgb(84, 84, 84);
