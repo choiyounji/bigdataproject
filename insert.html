@@ -6,7 +6,7 @@
     </head>
     <body>
         <header>
-            <a href="select.html">
+            <a href="select.php">
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" width="30px" height="30px" ViewBox="0 0 512 512">
                     <path d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
                     <path d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
@@ -81,14 +81,54 @@
     <div class="title2">
         Insert Item Sales
         </div>
-<form action="insertItem.php" method="POST">
-    <p>Item Identifier </br><input type="text" name="Item Identifier" > 
-    <p>Outlet Identifier</br> <input type="text" name="ID" > </p>
-    <p>Item Outlet Sales</br> <input type="text" name="ID" > </p>
-    <p>Item visibility</br> <input type="text" name="ID"></p> 
-    <p>Item MRP</br> <input type="text" name="ID"></p> 
-    <p><input type="submit" name="submit" value="INSERT Item Sales"></p>
-</form>    
+        <form action="insertItemSales.php" method="POST">
+            <p>Item Identifier </br><input type="text" name="iIdentifier" >
+            <p>Weight</br> <input type="number" name="iWeight" step=0.00001 > </p>
+            <p>Fat Content</br> <select name="iFatContent">
+            <option value="Low Fat" selected>Low Fat</option>
+            <option value="Regular">Regular</option>
+            <option value="High Fat">High Fat</option>
+            </select> </p>
+            <p>Type</br> <select name="iType">
+            <option value="Baking Goods">Baking Goods</option>
+            <option value="Breads">Breads</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Canned">Canned</option>
+            <option value="Dairy" selected >Dairy</option>
+            <option value="Frozen Foods">Frozen Foods</option>
+            <option value="Fruits and Vegetables">Fruits and Vegetables</option>
+            <option value="Hard Drinks">Hard Drinks</option>
+            <option value="Health and Hygiene">Health and Hygiene</option>
+            <option value="Household">Household</option>
+            <option value="Meat">Meat</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Snack Foods">Snack Foods</option>
+            <option value="Soft Drinks">Soft Drinks</option>
+            <option value="Starcky Foods">Starcky Foods</option>
+            </select></p> 
+            <p>Outlet Identifier</br> <input type="text" name="oIdentifier" > </p>
+            <p>Establishment Year</br> <input type="number" name="oEstablishmentYear" step=0.00001 > </p>
+            <p>Outlet Size</br> <select name="oSize">
+            <option value="Small" selected>Small</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+            </select>  </p>
+            <p>Location Type</br> <select name="oLocationType">
+            <option value="Tier1" selected>Tier1</option>
+            <option value="Tier2">Tier2</option>
+            <option value="Tier3">Tier3</option>
+            </select></p> 
+            <p>Outlet Type</br> <select name="oType">
+            <option value="Grocery store" selected>Grocery store</option>
+            <option value="Supermarket Type1">Supermarket Type1</option>
+            <option value="Supermarket Type2">Supermarket Type2</option>
+            <option value="Supermarket Type3">Supermarket Type3</option>
+            </select></p> 
+            <p>Item Outlet Sales</br> <input type="text" name="iOutletSales" > </p>
+            <p>Item visibility</br> <input type="text" name="iVisibility"></p> 
+            <p>Item MRP</br> <input type="text" name="iMrp"></p> 
+            <p><input type="submit" name="submit" value="INSERT Item Sales"></p>
+        </form>  
 
 </div>
 
