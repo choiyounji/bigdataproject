@@ -52,7 +52,7 @@
                     $sql = "SELECT iType, iFatContent, AVG(iOutletSales) AS averageSales
                             FROM typeFatSales
                             WHERE iType in ('".$list."')
-                            GROUP BY iType, iFatContent WITH ROLLUP";
+                            GROUP BY iType, iFatContent WITH ROLLUP;";
 
                     $res = mysqli_query($mysqli, $sql);
                     if($res){
