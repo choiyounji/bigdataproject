@@ -60,7 +60,7 @@
                             FROM typeSales
                             WHERE iType in ('".$list."')
                             GROUP BY iType
-                            WINDOW w AS (ORDER BY totalSales)  ORDER BY 'rank' DESC;";
+                            WINDOW w AS (ORDER BY totalSales desc)  ORDER BY 'rank' DESC;";
              
 
                     $res = mysqli_query($mysqli, $sql);
