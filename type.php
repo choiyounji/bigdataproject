@@ -38,7 +38,7 @@
                         $list = "";
                         if(empty($selectedTypes)){
                             $list = "Baking Goods', 'Breads', 'Breakfast', 'Canned', 'Dairy', 'Frozen Foods', 'Fruits and Vegetables', 'Hard Drinks', 
-                                'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starcky Foods', 'Others";
+                                'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starchy Foods', 'Others";
                         }
                         else{
                             $list = implode("', '", $selectedTypes);
@@ -46,7 +46,7 @@
                     }
                     else{
                         $list = "Baking Goods', 'Breads', 'Breakfast', 'Canned', 'Dairy', 'Frozen Foods', 'Fruits and Vegetables', 'Hard Drinks', 
-                                'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starcky Foods', 'Others";
+                                'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starchy Foods', 'Others";
                     }
 
                     $sql = "SELECT iType, COUNT(iType) AS count, SUM(iOutletSales) AS totalSales, AVG(iOutletSales) AS averageSales
@@ -91,7 +91,7 @@
                     <label><input type= "checkbox" name = "showValues[]" value="Seafood" <?php if(array_search('Seafood', $selectedTypes)===0||array_search('Seafood', $selectedTypes)){echo "checked";}?>></input></label>Seafood</br>
                     <label><input type= "checkbox" name = "showValues[]" value="Snack Foods" <?php if(array_search('Snack Foods', $selectedTypes)===0||array_search('Snack Foods', $selectedTypes)){echo "checked";}?>></input></label>Snack Foods</br>
                     <label><input type= "checkbox" name = "showValues[]" value="Soft Drinks" <?php if(array_search('Soft Drinks', $selectedTypes)===0||array_search('Soft Drinks', $selectedTypes)){echo "checked";}?>></input></label>Soft Drinks</br>
-                    <label><input type= "checkbox" name = "showValues[]" value="Starcky Foods" <?php if(array_search('Starcky Foods', $selectedTypes)===0||array_search('Starcky Foods', $selectedTypes)){echo "checked";}?>></input></label>Starcky Foods</br>
+                    <label><input type= "checkbox" name = "showValues[]" value="Starchy Foods" <?php if(array_search('Starchy Foods', $selectedTypes)===0||array_search('Starchy Foods', $selectedTypes)){echo "checked";}?>></input></label>Starchy Foods</br>
                     <label><input type= "checkbox" name = "showValues[]" value="Others" <?php if(array_search('Others', $selectedTypes)){echo "checked";}?>></input></label>Others
                 </p>
                 <input type="submit" name="submit" value="Run Analysis" />
