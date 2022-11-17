@@ -1,6 +1,7 @@
+<!-- 윤지윤&최윤지 -->
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="result.css">
     </head>
