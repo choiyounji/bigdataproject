@@ -50,17 +50,14 @@
                                 'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starchy Foods', 'Others";
                     }
 
-                    //$sql = "SELECT iType, COUNT(iType) AS count, SUM(iOutletSales) AS totalSales, AVG(iOutletSales) AS averageSales
-                            //FROM typeSales
-                            //WHERE iType in ('".$list."')
-                            //GROUP BY iType;";
+                
                             $sql ="SELECT iType, COUNT(iType) AS count, SUM(iOutletSales) AS totalSales, AVG(iOutletSales) AS averageSales, 
                             RANK() OVER w AS 'rank',
                             DENSE_RANK() OVER w AS 'denseRank'
                             FROM typeSales
                             WHERE iType in ('".$list."')
                             GROUP BY iType
-                            WINDOW w AS (ORDER BY totalSales)  ORDER BY 'rank' DESC;";
+                            WINDOW w AS (ORDER BY totalSales desc)  ORDER BY 'rank' DESC;";
              
 
                     $res = mysqli_query($mysqli, $sql);
