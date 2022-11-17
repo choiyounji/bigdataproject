@@ -20,6 +20,7 @@
             <th>Count</th>
             <th>Total Sales</th>
             <th>Average Sales</th>
+            <th>Rank</th>
             <?php
                 header('Content-Type: text/html; charset=UTF-8');
                 $mysqli=mysqli_connect("localhost","team21","team21","team21");
@@ -49,10 +50,18 @@
                                 'Health and Hygiene', 'Household', 'Meat', 'Seafood', 'Snack Foods', 'Soft Drinks', 'Starchy Foods', 'Others";
                     }
 
-                    $sql = "SELECT iType, COUNT(iType) AS count, SUM(iOutletSales) AS totalSales, AVG(iOutletSales) AS averageSales
-                            FROM typeSales
-                            WHERE iType in ('".$list."')
-                            GROUP BY iType;";
+                    //$sql = "SELECT iType, COUNT(iType) AS count, SUM(iOutletSales) AS totalSales, AVG(iOutletSales) AS averageSales
+                            //FROM typeSales
+                            //WHERE iType in ('".$list."')
+                            //GROUP BY iType;";
+                    $sql = "SELECT iType, COUNT(iType) AS count, SUM(iOutletSales) AS totalSales, AVG(iOutletSales) AS averageSales, 
+                    RANK() OVER w AS 'rank',
+                    DENSE_RANK() OVER w AS 'denseRank'
+                    FROM typeSales
+                    WHERE iType in ('".$list."')
+                    GROUP BY iType
+                    WINDOW w AS (ORDER BY totalSales desc);";
+
                     $res = mysqli_query($mysqli, $sql);
                     if($res){
                         while($newArray=mysqli_fetch_array($res, MYSQLI_ASSOC)){
@@ -60,7 +69,8 @@
                             $count=$newArray['count'];
                             $totalSales = $newArray['totalSales'];
                             $avgSales = $newArray['averageSales'];
-                            echo "<tr><td>".$iType."</td> <td>".$count."</td><td>".$totalSales."</td><td>".$avgSales."</td></tr>";
+                            $rank = $newArray['rank'];
+                            echo "<tr><td>".$iType."</td> <td>".$count."</td><td>".$totalSales."</td><td>".$avgSales."</td><td>".$rank."</td></tr>";
                         }
                     }
                     else{
