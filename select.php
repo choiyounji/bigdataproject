@@ -1,8 +1,9 @@
+<!-- 최윤지 -->
 <!DOCTYPE html>
 <?php
     session_start();
     $_SESSION['checked'] = 'All';
-    //echo "Session 값 : ".$_SESSION['checked']."<br/>";
+ 
     ?>
 <html>
     <head>
